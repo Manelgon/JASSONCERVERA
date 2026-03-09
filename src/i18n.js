@@ -10,7 +10,8 @@ export const EN = {
     'nav.contacto': 'Contact',
 
     // Hero
-    'hero.subtitle': 'Integrative medicine focused on prevention, not just treatment. Biomarkers, clinical nutrition and lifestyle to optimize long-term health.',
+    'hero.h1_sub': 'Integrative medicine focused on prevention and longevity optimization.',
+    'hero.subtitle': 'Integrative physician with background in nursing and clinical nutrition. Focused on prevention, not just treatment, optimizing health through biomarkers and lifestyle.',
     'hero.feat1_title': 'Preventive medicine',
     'hero.feat1_desc': 'Getting ahead of disease through advanced diagnostics, biomarkers and biological age measurement.',
     'hero.feat2_title': 'Clinical nutrition & lifestyle',
@@ -101,8 +102,8 @@ export const ES = {
     'nav.trayectoria': 'Trayectoria',
     'nav.faq': 'Preguntas',
     'nav.contacto': 'Contacto',
-    'hero.h1_sub': '| Medicina Preventiva y Longevidad',
-    'hero.subtitle': 'Medicina integradora orientada a prevenir, no solo a tratar. Biomarcadores, nutrición clínica y estilo de vida para optimizar la salud a largo plazo.',
+    'hero.h1_sub': 'Medicina integradora enfocada en la prevención y la optimización de la longevidad.',
+    'hero.subtitle': 'Médico integrativo con formación en enfermería y nutrición clínica. Orientado a prevenir, no solo a tratar, optimizando la salud a largo plazo.',
     'hero.feat1_title': 'Medicina preventiva',
     'hero.feat1_desc': 'Anticiparse a la enfermedad mediante diagnóstico avanzado, biomarcadores y medición de la edad biológica.',
     'hero.feat2_title': 'Nutrición clínica y estilo de vida',

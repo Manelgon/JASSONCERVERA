@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://doctorjassoncervera.automatizatelo.com/sitemap.xml
+Sitemap: https://doctorjassoncerveraalzate.com/sitemap.xml
