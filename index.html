@@ -1,0 +1,749 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Dr. Jasson Cervera — Médico con formación en enfermería y nutrición clínica. Enfoque integrador en medicina preventiva, optimización de la salud, biomarcadores, estilo de vida y longevidad." />
+  <title>Dr. Jasson Cervera | Medicina Preventiva y Longevidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="theme-luxury">
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav id="navbar" class="nav-luxury">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Dr. Jasson Cervera</a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#enfoque" data-i18n="nav.enfoque">Mi enfoque</a></li>
+        <li><a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
+        <li><a href="#contacto" class="nav-cta" data-i18n="nav.contacto">Contacto</a></li>
+        <li class="nav-lang-switcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </li>
+      </ul>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO (fondo video · estilo MyHealthPrac) ====== -->
+  <section id="hero" class="hero-video">
+    <div class="hero-video-bg">
+      <video autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/8733062/8733062-hd_1920_1080_30fps.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="hero-video-content">
+      <div class="hero-video-left">
+        <h1 class="hero-video-title">Dr. Jasson Cervera</h1>
+        <p class="hero-video-subtitle" data-i18n="hero.subtitle">
+          Medicina integradora orientada a prevenir, no solo a tratar. Biomarcadores, nutrición clínica y estilo de vida
+          para optimizar la salud a largo plazo.
+        </p>
+        <ul class="hero-video-features">
+          <li>
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="hero.feat1_title">Medicina preventiva</strong>
+              <span data-i18n="hero.feat1_desc">Anticiparse a la enfermedad mediante diagnóstico avanzado, biomarcadores
+                y medición de la edad
+                biológica.</span>
+            </div>
+          </li>
+          <li>
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2a10 10 0 0 1 10 10" />
+                <path d="M12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" />
+                <path d="M12 22v-4" />
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="hero.feat2_title">Nutrición clínica y estilo de vida</strong>
+              <span data-i18n="hero.feat2_desc">Educación del paciente, cambio de hábitos sostenibles y optimización
+                metabólica
+                personalizada.</span>
+            </div>
+          </li>
+          <li>
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="hero.feat3_title">Longevidad y optimización</strong>
+              <span data-i18n="hero.feat3_desc">Optimizar la biología humana — calidad y esperanza de vida mediante
+                medicina personalizada y basada
+                en datos.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="hero-video-right">
+        <p class="hero-video-tagline" data-i18n="hero.tagline">Anticiparse a la enfermedad y optimizar la biología
+          humana.</p>
+        <div class="hero-video-ctas">
+          <a href="#contacto" class="btn-hero-video-primary" data-i18n="hero.cta_contact">Contacto</a>
+          <a href="#trayectoria" class="btn-hero-video-secondary" id="cta-explore">
+            <span data-i18n="hero.cta_trayectoria">Ver mi trayectoria</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SOBRE MÍ ====== -->
+  <section id="about" class="section-luxury about-section">
+    <div class="section-container">
+      <h2 class="section-title-luxury">
+        <span class="title-accent" data-i18n="about.accent">Biografía</span>
+        <span data-i18n-html="about.title">Medicina integradora orientada a prevenir,<br> no solo a tratar</span>
+      </h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p class="about-lead" data-i18n-html="about.p1">
+            Mi trayectoria profesional no sigue la línea clásica. Empecé en <strong>nutrición clínica</strong>,
+            acompañando a pacientes en procesos de cambio de hábitos y mejora metabólica. Pasé por
+            <strong>enfermería</strong> en hospitalización y cirugía, comprendiendo el cuerpo humano desde múltiples
+            perspectivas. Y llegué a <strong>medicina</strong> con una idea muy clara: dedicarme a prevenir, no solo a
+            tratar.
+          </p>
+          <p data-i18n-html="about.p2">
+            He trabajado en más de ocho centros sanitarios —desde Joan XXIII y Son Espases hasta atención primaria en el
+            ICS— atendiendo miles de pacientes. Pero lo que realmente me define es el interés por el
+            <strong>metabolismo</strong>, los <strong>biomarcadores</strong> y la convicción de que el envejecimiento
+            puede entenderse, medirse y modularse.
+          </p>
+          <p data-i18n-html="about.p3">
+            Creo en una medicina que integre datos, nutrición y estilo de vida para optimizar la biología humana. El
+            creciente desarrollo científico en el campo de la <strong>longevidad</strong> y la biología del
+            envejecimiento me resulta profundamente estimulante.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="/dr.Jasson-Cervera.svg" alt="Dr. Jasson Cervera" class="about-doctor-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MI ENFOQUE ====== -->
+  <section id="enfoque" class="section-luxury enfoque-section">
+    <div class="section-container">
+      <h2 class="section-title-luxury">
+        <span class="title-accent" data-i18n="enfoque.accent">Mi enfoque</span>
+        <span data-i18n-html="enfoque.title">Anticiparse a la enfermedad y<br> optimizar la biología</span>
+      </h2>
+      <div class="enfoque-grid">
+        <article class="enfoque-card">
+          <h3 data-i18n="enfoque.card1_title">Medicina preventiva</h3>
+          <p data-i18n="enfoque.card1_desc">Anticiparse a la enfermedad mediante diagnóstico avanzado, biomarcadores y
+            medición de la edad biológica.
+          </p>
+        </article>
+        <article class="enfoque-card">
+          <h3 data-i18n="enfoque.card2_title">Nutrición clínica y estilo de vida</h3>
+          <p data-i18n="enfoque.card2_desc">Educación del paciente, cambio de hábitos sostenibles y optimización
+            metabólica personalizada.</p>
+        </article>
+        <article class="enfoque-card">
+          <h3 data-i18n="enfoque.card3_title">Longevidad y optimización</h3>
+          <p data-i18n="enfoque.card3_desc">Optimizar la biología humana — calidad y esperanza de vida mediante medicina
+            personalizada y basada en
+            datos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRAYECTORIA = Metro Map ====== -->
+  <section id="trayectoria" class="section-luxury mapa-section">
+    <div class="section-container">
+      <h2 class="section-title-luxury">
+        <span class="title-accent" data-i18n="tray.accent">Trayectoria</span>
+        <span data-i18n="tray.title">Mapa de experiencia profesional</span>
+      </h2>
+      <p class="section-sub" data-i18n="tray.sub">Haz clic en cualquier estación para explorar cada etapa del recorrido.
+      </p>
+
+      <!-- Metro legend -->
+      <div class="metro-legend">
+        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#B38645"></span><span
+            data-i18n="legend.formacion">Formación
+            académica</span></div>
+        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#2D8B7A"></span><span
+            data-i18n="legend.clinica">Experiencia
+            clínica</span></div>
+        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#4A7BB7"></span><span
+            data-i18n="legend.nutricion">Nutrición
+            clínica</span></div>
+        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#C07640"></span><span
+            data-i18n="legend.competencias">Competencias
+          </span></div>
+        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#7B5EA7"></span><span
+            data-i18n="legend.divulgacion">Divulgación
+          </span></div>
+      </div>
+
+      <!-- Metro Map SVG — CRONOLÓGICO: cada columna X = un período de tiempo -->
+      <div class="metro-map-wrapper">
+        <svg class="metro-svg" viewBox="0 0 1150 530" preserveAspectRatio="xMidYMid meet">
+          <!--
+            CRONOLOGÍA visual:
+            x=70  2013  |  x=200 2015  |  x=320 2017
+            x=450 2018  |  x=570 2020  |  x=690 2022
+            x=810 2023  |  x=905 acum  |  x=1050 HUB
+          -->
+
+          <!-- === LÍNEAS HORIZONTALES === -->
+          <polyline class="metro-line" points="35,75 810,75 1050,275" stroke="#B38645" fill="none" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <polyline class="metro-line" points="35,175 905,175 1050,268" stroke="#2D8B7A" fill="none" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <polyline class="metro-line" points="35,275 1050,275" stroke="#4A7BB7" fill="none" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <polyline class="metro-line" points="35,375 840,375 1050,282" stroke="#C07640" fill="none" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <polyline class="metro-line" points="35,455 840,455 1050,290" stroke="#7B5EA7" fill="none" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" />
+
+          <!-- === INTERCONEXIONES CRONOLÓGICAS (dashes verticales) === -->
+          <!-- 2013: ADEMA(L1) ↕ NutrBase(L3) — misma institución y año -->
+          <line x1="70" y1="85" x2="70" y2="265" stroke="#B38645" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <text x="77" y="185" font-family="Manrope,sans-serif" font-size="7" fill="#B38645" opacity="0.65">2013</text>
+
+          <!-- 2015: Ysonut(L3) ↕ Form.prof(L5) — misma empresa Ysonut, simultáneos -->
+          <line x1="200" y1="285" x2="200" y2="445" stroke="#7B5EA7" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <text x="207" y="368" font-family="Manrope,sans-serif" font-size="7" fill="#7B5EA7" opacity="0.65">2015</text>
+
+          <!-- 2017: UIB(L1) ↕ JoanXXIII(L2) — prácticas clínicas durante la carrera -->
+          <line x1="320" y1="85" x2="320" y2="165" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <!-- 2017: JoanXXIII(L2) ↕ Workshops(L5) — Ysonut aún activo en mismo período -->
+          <line x1="320" y1="185" x2="320" y2="445" stroke="#888" stroke-width="1.2" stroke-dasharray="4 4"
+            opacity="0.3" />
+          <text x="327" y="308" font-family="Manrope,sans-serif" font-size="7" fill="#888" opacity="0.65">2017</text>
+
+          <!-- 2018-19: SonEspases(L2) ↕ Bioimpedancia(L3) ↕ Preventiva(L4) -->
+          <line x1="450" y1="185" x2="450" y2="265" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <line x1="450" y1="285" x2="450" y2="365" stroke="#4A7BB7" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <text x="457" y="318" font-family="Manrope,sans-serif" font-size="7" fill="#888" opacity="0.65">2018–19</text>
+
+          <!-- 2019-20: Quirón(L2) ↕ Autonomía(L4) -->
+          <line x1="570" y1="185" x2="570" y2="365" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.38" />
+          <text x="577" y="285" font-family="Manrope,sans-serif" font-size="7" fill="#888" opacity="0.65">2019–20</text>
+
+          <!-- 2021-22: URV(L1) ↕ CapRoses(L2) ↕ Biomarcadores(L4) ↕ EducPac(L5) — gran convergencia -->
+          <line x1="690" y1="85" x2="690" y2="165" stroke="#B38645" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.5" />
+          <line x1="690" y1="185" x2="690" y2="265" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.38" />
+          <line x1="690" y1="285" x2="690" y2="365" stroke="#4A7BB7" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.38" />
+          <line x1="690" y1="385" x2="690" y2="445" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.38" />
+          <text x="697" y="218" font-family="Manrope,sans-serif" font-size="7" fill="#888" opacity="0.7">2021–22</text>
+
+          <!-- 2023+: AMIR(L1) ↕ CapSitges(L2) ↕ EducNut(L3) ↕ Longevidad(L4) ↕ DivulgCient(L5) — confluencia total -->
+          <line x1="810" y1="85" x2="810" y2="165" stroke="#B38645" stroke-width="2" stroke-dasharray="5 3"
+            opacity="0.55" />
+          <line x1="810" y1="185" x2="810" y2="265" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <line x1="810" y1="285" x2="810" y2="365" stroke="#4A7BB7" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <line x1="810" y1="385" x2="810" y2="445" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <text x="817" y="218" font-family="Manrope,sans-serif" font-size="7" font-weight="600" fill="#B38645"
+            opacity="0.8">2023 ↓</text>
+
+          <!-- === FORMACIÓN (Gold, y=75) === -->
+          <g class="metro-station" data-filter="adema" tabindex="0" role="button" aria-label="ADEMA 2013">
+            <circle cx="70" cy="75" r="18" fill="transparent" />
+            <circle cx="70" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
+            <circle cx="70" cy="75" r="4" fill="#B38645" />
+          </g>
+          <text x="70" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700"
+            fill="#B38645">2013</text>
+          <text x="70" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17"
+            fill="#3a3030">ADEMA</text>
+
+          <g class="metro-station" data-filter="uib" tabindex="0" role="button" aria-label="UIB Enfermería 2017">
+            <circle cx="320" cy="75" r="18" fill="transparent" />
+            <circle cx="320" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
+            <circle cx="320" cy="75" r="4" fill="#B38645" />
+          </g>
+          <text x="320" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700"
+            fill="#B38645">2017</text>
+          <text x="320" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" fill="#3a3030">UIB
+            Enferm.</text>
+
+          <g class="metro-station" data-filter="urv" tabindex="0" role="button" aria-label="URV Medicina 2022">
+            <circle cx="690" cy="75" r="18" fill="transparent" />
+            <circle cx="690" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
+            <circle cx="690" cy="75" r="4" fill="#B38645" />
+          </g>
+          <text x="690" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700"
+            fill="#B38645">2022</text>
+          <text x="690" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" fill="#3a3030">URV
+            Medicina</text>
+
+          <g class="metro-station" data-filter="amir" tabindex="0" role="button" aria-label="AMIR Máster 2023">
+            <circle cx="810" cy="75" r="18" fill="transparent" />
+            <circle cx="810" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
+            <circle cx="810" cy="75" r="4" fill="#B38645" />
+          </g>
+          <text x="810" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700"
+            fill="#B38645">2023</text>
+          <text x="810" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" fill="#3a3030">AMIR
+            Máster</text>
+
+          <!-- === CLÍNICA (Teal, y=175) === -->
+          <g class="metro-station" data-filter="joan-xxiii" tabindex="0" role="button"
+            aria-label="Joan XXIII Tarragona">
+            <circle cx="320" cy="175" r="18" fill="transparent" />
+            <circle cx="320" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="320" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="320" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Joan XXIII</text>
+          <text x="320" y="222" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#2D8B7A">Tarragona</text>
+
+          <g class="metro-station" data-filter="son-espases" tabindex="0" role="button" aria-label="Son Espases Palma">
+            <circle cx="450" cy="175" r="18" fill="transparent" />
+            <circle cx="450" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="450" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="450" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Son Espases</text>
+          <text x="450" y="222" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#2D8B7A">Palma · 2018</text>
+
+          <g class="metro-station" data-filter="quiron" tabindex="0" role="button" aria-label="Quirón 2019-2020">
+            <circle cx="570" cy="175" r="18" fill="transparent" />
+            <circle cx="570" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="570" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="570" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Quirón Salud</text>
+          <text x="570" y="222" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#2D8B7A">2019–2020</text>
+
+          <g class="metro-station" data-filter="cap-roses" tabindex="0" role="button" aria-label="CAP Roses 2022">
+            <circle cx="690" cy="175" r="18" fill="transparent" />
+            <circle cx="690" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="690" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="690" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">CAP Roses</text>
+          <text x="690" y="222" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#2D8B7A">Cadaqués</text>
+
+          <g class="metro-station" data-filter="cap" tabindex="0" role="button" aria-label="CAP Sitges 2023">
+            <circle cx="810" cy="175" r="18" fill="transparent" />
+            <circle cx="810" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="810" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="810" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">CAP Sitges</text>
+          <text x="810" y="222" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#2D8B7A">Ametlla de Mar</text>
+
+          <g class="metro-station" data-filter="consultas" tabindex="0" role="button" aria-label="7000 consultas">
+            <circle cx="905" cy="175" r="18" fill="transparent" />
+            <circle cx="905" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
+            <circle cx="905" cy="175" r="4" fill="#2D8B7A" />
+          </g>
+          <text x="905" y="150" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">7.000+</text>
+          <text x="905" y="132" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="#2D8B7A"
+            data-i18n-svg="legend.consultas">Consultas</text>
+
+          <!-- === NUTRICIÓN (Blue, y=275) === -->
+          <g class="metro-station" data-filter="adema-nut" tabindex="0" role="button" aria-label="Nutrición base ADEMA">
+            <circle cx="70" cy="275" r="18" fill="transparent" />
+            <circle cx="70" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
+            <circle cx="70" cy="275" r="4" fill="#4A7BB7" />
+          </g>
+          <text x="70" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Nutr. base</text>
+          <text x="70" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#4A7BB7">ADEMA</text>
+
+          <g class="metro-station" data-filter="ysonut" tabindex="0" role="button" aria-label="Ysonut 2015">
+            <circle cx="200" cy="275" r="18" fill="transparent" />
+            <circle cx="200" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
+            <circle cx="200" cy="275" r="4" fill="#4A7BB7" />
+          </g>
+          <text x="200" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Ysonut</text>
+          <text x="200" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#4A7BB7">2015–2017</text>
+
+          <g class="metro-station" data-filter="bioimpedancia" tabindex="0" role="button"
+            aria-label="Bioimpedancia 2018">
+            <circle cx="450" cy="275" r="18" fill="transparent" />
+            <circle cx="450" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
+            <circle cx="450" cy="275" r="4" fill="#4A7BB7" />
+          </g>
+          <text x="450" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.bioimpedancia">Bioimpedancia</text>
+          <text x="450" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="#4A7BB7"
+            data-i18n-svg="map.bioimpedancia_year">2018–hoy</text>
+
+          <g class="metro-station" data-filter="educacion-nut" tabindex="0" role="button"
+            aria-label="Educación nutricional 2023">
+            <circle cx="810" cy="275" r="18" fill="transparent" />
+            <circle cx="810" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
+            <circle cx="810" cy="275" r="4" fill="#4A7BB7" />
+          </g>
+          <text x="810" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.educ_nut">Educ. nutricional</text>
+
+          <!-- === COMPETENCIAS (Orange, y=375) — stations spread across full timeline === -->
+
+          <!-- Gestión Ventas Ysonut — x=190 (2015, simultáneo con Ysonut nutrición) -->
+          <!-- connector: Ysonut (L3, x=200,y=275) → gestion-ventas (L4, x=190,y=375) -->
+          <line x1="200" y1="285" x2="192" y2="365" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <g class="metro-station" data-filter="gestion-ventas" tabindex="0" role="button"
+            aria-label="Gestión Ventas Ysonut">
+            <circle cx="190" cy="375" r="18" fill="transparent" />
+            <circle cx="190" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="190" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="190" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.ventas">Ventas</text>
+          <text x="190" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#C07640">Ysonut</text>
+
+          <!-- Puntos de Venta Ysonut — x=270 (2016-17, gestión de red de clínicas) -->
+          <!-- connector: formacion-prof(L5,x=200,y=455) → puntos-venta(L4,x=270,y=375) -->
+          <line x1="220" y1="445" x2="265" y2="385" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <g class="metro-station" data-filter="puntos-venta" tabindex="0" role="button"
+            aria-label="Gestión Puntos de Venta">
+            <circle cx="270" cy="375" r="18" fill="transparent" />
+            <circle cx="270" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="270" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="270" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.puntos_venta">Puntos Venta</text>
+          <text x="270" y="334" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#C07640">2016–2018</text>
+
+          <!-- Cuidados Clínicos — x=365 (2017, habilidades Joan XXIII, no Ysonut) -->
+          <!-- connector: joan-xxiii(L2,x=320,y=175) → cuidados-clinicos(L4,x=365,y=375) -->
+          <line x1="330" y1="185" x2="362" y2="365" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.4" />
+          <g class="metro-station" data-filter="cuidados-clinicos" tabindex="0" role="button"
+            aria-label="Habilidades Clínicas Joan XXIII">
+            <circle cx="365" cy="375" r="18" fill="transparent" />
+            <circle cx="365" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="365" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="365" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.habilid_clin">Habilid. Clínicas</text>
+          <text x="365" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#C07640">2017–2018</text>
+
+          <!-- Preventiva — x=460 (2018, Son Espases) -->
+          <g class="metro-station" data-filter="preventiva" tabindex="0" role="button"
+            aria-label="Medicina preventiva 2018">
+            <circle cx="460" cy="375" r="18" fill="transparent" />
+            <circle cx="460" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="460" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="460" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.preventiva">Preventiva</text>
+
+          <!-- Cirugía Quirúrgica — x=530 (2018-20, Son Espases + Quirón) -->
+          <!-- connector diagonal from Quirón L2 -->
+          <line x1="570" y1="185" x2="530" y2="365" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
+            opacity="0.45" />
+          <g class="metro-station" data-filter="cirugia" tabindex="0" role="button" aria-label="Asistencia Quirúrgica">
+            <circle cx="530" cy="375" r="18" fill="transparent" />
+            <circle cx="530" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="530" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="530" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.cirugia">Cirugía</text>
+          <text x="530" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#C07640">2018–2020</text>
+
+          <!-- Autonomía — x=620 (2019-20) -->
+          <g class="metro-station" data-filter="autonomia" tabindex="0" role="button"
+            aria-label="Autonomía médica 2019">
+            <circle cx="620" cy="375" r="18" fill="transparent" />
+            <circle cx="620" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="620" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="620" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.autonomia">Autonomía</text>
+
+          <!-- Biomarcadores — x=720 (2021-22) -->
+          <g class="metro-station" data-filter="biomarcadores" tabindex="0" role="button"
+            aria-label="Biomarcadores 2022">
+            <circle cx="720" cy="375" r="18" fill="transparent" />
+            <circle cx="720" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="720" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="720" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.biomarcadores">Biomarcadores</text>
+
+          <!-- Longevidad — x=820 (2023+) -->
+          <g class="metro-station" data-filter="longevidad" tabindex="0" role="button" aria-label="Longevidad 2023">
+            <circle cx="820" cy="375" r="18" fill="transparent" />
+            <circle cx="820" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
+            <circle cx="820" cy="375" r="4" fill="#C07640" />
+          </g>
+          <text x="820" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.longevidad">Longevidad</text>
+
+
+          <!-- === DIVULGACIÓN (Purple, y=455) === -->
+          <g class="metro-station" data-filter="formacion-prof" tabindex="0" role="button"
+            aria-label="Formación profesionales Ysonut 2015">
+            <circle cx="200" cy="455" r="18" fill="transparent" />
+            <circle cx="200" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
+            <circle cx="200" cy="455" r="4" fill="#7B5EA7" />
+          </g>
+          <text x="200" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.form_prof">Form. prof.</text>
+          <text x="200" y="502" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#7B5EA7">Ysonut</text>
+
+          <g class="metro-station" data-filter="workshops" tabindex="0" role="button" aria-label="Workshops 2016-2018">
+            <circle cx="320" cy="455" r="18" fill="transparent" />
+            <circle cx="320" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
+            <circle cx="320" cy="455" r="4" fill="#7B5EA7" />
+          </g>
+          <text x="320" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030">Workshops</text>
+          <text x="320" y="502" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
+            fill="#7B5EA7">2016–2018</text>
+
+          <g class="metro-station" data-filter="educacion-pac" tabindex="0" role="button"
+            aria-label="Educación paciente 2022">
+            <circle cx="690" cy="455" r="18" fill="transparent" />
+            <circle cx="690" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
+            <circle cx="690" cy="455" r="4" fill="#7B5EA7" />
+          </g>
+          <text x="690" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.educ_pac">Educ. paciente</text>
+
+          <g class="metro-station" data-filter="divulgacion-cient" tabindex="0" role="button"
+            aria-label="Divulgación científica 2023">
+            <circle cx="810" cy="455" r="18" fill="transparent" />
+            <circle cx="810" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
+            <circle cx="810" cy="455" r="4" fill="#7B5EA7" />
+          </g>
+          <text x="810" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
+            fill="#3a3030" data-i18n-svg="map.divulg_cient">Divulgación cient.</text>
+
+
+          <!-- === HUB central (al final = encima de líneas) === -->
+          <circle cx="1050" cy="275" r="68" fill="white" stroke="#B38645" stroke-width="3" />
+          <circle cx="1050" cy="275" r="60" fill="none" stroke="#B38645" stroke-width="1" stroke-dasharray="4 3"
+            opacity="0.35" />
+          <text x="1050" y="267" text-anchor="middle" font-family="Playfair Display,serif" font-size="18"
+            font-weight="600" fill="#2A2420">Dr. Jasson</text>
+          <text x="1050" y="291" text-anchor="middle" font-family="Playfair Display,serif" font-size="18"
+            font-weight="600" fill="#2A2420">Cervera</text>
+
+          <!-- === Eje cronológico al pie === -->
+          <line x1="35" y1="510" x2="1000" y2="510" stroke="#ccc" stroke-width="0.5" />
+          <text x="70" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2013</text>
+          <text x="200" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2015</text>
+          <text x="320" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2017</text>
+          <text x="450" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2018–19</text>
+          <text x="570" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2019–20</text>
+          <text x="690" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2021–22</text>
+          <text x="810" y="522" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7"
+            fill="#bbb">2023+</text>
+
+        </svg>
+      </div><!-- /.metro-map-wrapper -->
+
+      <!-- ===== MOBILE ACCORDION — hidden on desktop, shown on mobile ===== -->
+      <!-- Content is generated dynamically by initMetroMobile() in main.js -->
+      <div id="metro-mobile" aria-label="Mapa de carrera — vista móvil"></div>
+
+      <!-- Floating Station Card — positioned via JS next to clicked station -->
+      <div class="metro-tooltip" id="metro-panel" role="dialog" aria-hidden="true" aria-modal="true">
+        <button type="button" class="metro-tooltip-close" aria-label="Cerrar">×</button>
+        <div class="metro-panel-body"></div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- ====== PREGUNTAS FRECUENTES ====== -->
+  <section id="faq" class="section-luxury faq-section">
+    <div class="section-container">
+      <h2 class="section-title-luxury">
+        <span class="title-accent" data-i18n="faq.accent">Preguntas frecuentes</span>
+        <span data-i18n-html="faq.title">Profundizando en mi visión clínica<br> y abordaje integral</span>
+      </h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q1">¿Qué valor aporta tu perfil multidisciplinar en una clínica
+            de longevidad?
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq.a1">Ser médico, enfermero y dietista me permite abordar al paciente desde una visión 360º.
+              Entiendo la
+              nutrición clínica de forma molecular, sé cómo funciona el cuidado práctico del paciente y puedo
+              interpretar biomarcadores para diseñar estrategias integradas. En medicina de longevidad —donde la
+              nutrición y el estilo de vida son pilares— este perfil integrador es una ventaja competitiva.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q2">¿Cómo integras los biomarcadores en tu práctica diaria?
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq.a2">Utilizo analíticas avanzadas no solo para detectar enfermedad, sino para identificar
+              firmas metabólicas y
+              perfiles de riesgo. El objetivo es actuar sobre la inflamación silenciosa o el estrés oxidativo antes de
+              que el daño sea irreversible, personalizando la suplementación y la dieta en base a datos reales.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q3">¿Cuál es tu enfoque sobre la educación y el empoderamiento
+            del paciente?
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq.a3">La adherencia al tratamiento en longevidad depende de que el paciente entienda su
+              biología. Utilizo
+              herramientas como la bioimpedancia avanzada para que el paciente vea su evolución real más allá del peso.
+              Cuando alguien comprende sus biomarcadores, se convierte en el protagonista activo de su optimización de
+              salud.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q4">¿Qué experiencia clínica respalda tu autonomía médica?
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq.a4">He atendido más de 7.000 consultas en atención primaria y urgencias, además de mi
+              trayectoria en
+              hospitales de tercer nivel como Joan XXIII y Son Espases. Esta base clínica sólida me permite manejar el
+              riesgo médico con seguridad mientras aplico protocolos de optimización y medicina de precisión.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q5">¿Cuál es tu visión sobre el futuro de la medicina
+            personalizada?</summary>
+          <div class="faq-answer">
+            <p data-i18n="faq.a5">Pasaremos del modelo reactivo al proactivo. El futuro es la "healthspan optimization":
+              extender los años
+              de salud total mediante el uso de genética, epigenética y monitorización continua. Es el cambio de
+              paradigma que buscamos en Age Reversal, alineando la ciencia de vanguardia con la realidad biológica de
+              cada individuo.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACTO ====== -->
+  <section id="contacto" class="section-luxury contacto-section">
+    <div class="section-container">
+      <div class="contact-card-luxury">
+        <h2 class="section-title-luxury">
+          <span class="title-accent" data-i18n="contact.accent">Contacto</span>
+          <span data-i18n-html="contact.title">¿Hablamos sobre prevención y<br> optimización de la salud?</span>
+        </h2>
+        <div class="contact-buttons">
+          <a href="mailto:jasson.ca@gmail.com" class="btn-gold">Email</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn-outline-gold">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script type="module" src="/src/main.js"></script>
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer-luxury">
+    <div class="section-container">
+      <div class="footer-grid">
+        <!-- Columna 1: Perfil -->
+        <div class="footer-col footer-info">
+          <h3>Dr. Jasson Cervera</h3>
+          <p data-i18n="footer.desc">Medicina integradora enfocada en la prevención y la optimización de la longevidad.
+          </p>
+        </div>
+
+        <!-- Columna 2: Contacto -->
+        <div class="footer-col footer-contact-col">
+          <h4 data-i18n="footer.contact_title">Contacto</h4>
+          <div class="footer-contact-links">
+            <a href="mailto:jasson.ca@gmail.com">jasson.ca@gmail.com</a>
+            <a href="tel:+34637478406">637 47 84 06</a>
+          </div>
+          <p class="footer-loc">Barcelona / Palma de Mallorca</p>
+        </div>
+
+        <!-- Columna 3: Navegación -->
+        <div class="footer-col footer-nav">
+          <h4 data-i18n="footer.nav_title">Navegación</h4>
+          <ul>
+            <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+            <li><a href="#enfoque" data-i18n="nav.enfoque">Mi enfoque</a></li>
+            <li><a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">&copy; 2026 Dr. Jasson Cervera. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
