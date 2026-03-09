@@ -213,34 +213,44 @@ export const METRO_CONTENT_EN = {
             'Convergence of the entire career path towards longevity',
         ],
     },
+    'enf-mallorca': {
+        title: 'Hospital Nursing — Mallorca',
+        institution: 'HUSE · H. Juaneda Miramar · Quirón Salud',
+        items: [
+            'Digestive Endoscopy/ERCP Department (HUSE)',
+            'Hospitalization: Psychiatry, Oncology, MIN (H. Juaneda Miramar)',
+            'Hospitalization: DG, CRD, MIN, UCE, COT (HUSE)',
+            'Hospitalization: Cardio-Internal Medicine (Quirón)',
+        ],
+    },
+    'enf-huse-reus': {
+        title: 'Hospital Nursing — COVID',
+        institution: 'H.U. Son Espases · H.U. Sant Joan de Reus',
+        items: [
+            'Maxillofacial Surgery Department (HUSE)',
+            'Vascular Surgery & Angiology Department (HUSE)',
+            'COVID-19 / Social Healthcare Hospitalization (H.U. Sant Joan de Reus)',
+            'Frontline clinical management during the pandemic',
+        ],
+    },
     'joan-xxiii': {
         title: 'Hospital Nursing — Joan XXIII',
         institution: 'Joan XXIII University Hospital, Tarragona',
         items: [
-            'Hospitalization: surgery, oncology and endoscopy',
+            'Hospitalization: URO-ORL-CVA',
+            'COVID-19 mass vaccination campaign',
             'Care in a tertiary hospital environment',
-            'Direct collaboration with multidisciplinary medical teams',
-            'First real autonomy in clinical decision-making',
-        ],
-    },
-    'son-espases': {
-        title: 'University Hospital Nursing',
-        institution: 'Son Espases Hospital, Palma de Mallorca',
-        items: [
-            'Plastic, reparative and reconstructive surgery',
-            'Psychiatry and complex inpatient care',
-            'Advanced case management and safety protocols',
             'Consolidation of nursing clinical judgment',
         ],
     },
-    quiron: {
-        title: 'Specialized Surgery Nursing',
-        institution: 'Quirón Salud',
+    'cap-ametlla': {
+        title: 'Physician — CAP Ametlla de Mar',
+        institution: 'CAP Ametlla de Mar — Emergency',
         items: [
-            'Specialized surgery in a private hospital setting',
-            'Clinical excellence and quality care protocols',
-            'Advanced case and complex patient management',
-            'Multidisciplinary teamwork with integrated medical judgment',
+            'First medical practice after graduation',
+            'Primary care emergencies',
+            'Full medical autonomy from the start',
+            'Ambulatory emergency management',
         ],
     },
     'cap-roses': {
@@ -250,12 +260,22 @@ export const METRO_CONTENT_EN = {
             '30–40 patients daily with full medical autonomy',
             'Management of hypertension, type 2 diabetes, dyslipidemia',
             'Ambulatory emergencies in rural and coastal areas',
-            'First real practice as a physician after graduation',
+            'Consolidation of medical judgment in high demand',
+        ],
+    },
+    'cap-mora': {
+        title: 'Physician — CAP Mora la Nova',
+        institution: 'CAP Mora la Nova · Mora d\'Ebre',
+        items: [
+            'Primary care in a rural setting',
+            'Medical consultations with full autonomy',
+            'Chronic and acute patient follow-up',
+            'Consolidation of competencies in primary medicine',
         ],
     },
     cap: {
-        title: 'Physician — CAP Sitges · Ametlla de Mar',
-        institution: 'CAP Sitges · Hospital Francolí · Ametlla de Mar',
+        title: 'Physician — CAP Sitges',
+        institution: 'CAP Sitges · Hospital Francolí',
         items: [
             'Primary care and hospital emergencies',
             'Emergency shifts at Hospital Sant Joan de Reus',

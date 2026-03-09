@@ -110,7 +110,7 @@ const METRO_CONTENT = {
       'Habilidades clínicas y de comunicación médica',
       'Cuidado integral del paciente',
     ],
-    connections: ['joan-xxiii', 'workshops'], // 2017 — prácticas + Ysonut activo
+    connections: ['enf-mallorca', 'workshops'],
   },
   urv: {
     line: 'formacion', year: '2022',
@@ -136,41 +136,53 @@ const METRO_CONTENT = {
     ],
     connections: ['cap', 'educacion-nut', 'longevidad', 'divulgacion-cient'], // 2023 — gran confluencia
   },
+  'enf-mallorca': {
+    line: 'clinica', year: '2017–2019',
+    title: 'H. Juaneda Miramar, Quirón',
+    institution: 'HUSE · H. Juaneda Miramar · Quirón Salud',
+    items: [
+      'Gabinete Digestivo Endoscopia/CPRE (HUSE)',
+      'Hospitalización Psiquiatría-Oncología-MIN (H. Juaneda Miramar)',
+      'Hospitalización DG, CRD, MIN, UCE, COT (HUSE)',
+      'Hospitalización Cardio-Medicina Interna (Quirón)',
+    ],
+    connections: ['uib', 'bioimpedancia', 'preventiva', 'workshops'],
+  },
+  'enf-huse-reus': {
+    line: 'clinica', year: '2020',
+    title: 'Enfermería Hospitalaria — COVID',
+    institution: 'H.U. Son Espases · H.U. Sant Joan de Reus',
+    items: [
+      'Gabinete Cirugía Maxilofacial (HUSE)',
+      'Gabinete Cirugía Vascular y Angiología (HUSE)',
+      'Hospitalización COVID-19 / Sociosanitario (H.U. Sant Joan de Reus)',
+      'Gestión clínica en primera línea de pandemia',
+    ],
+    connections: ['enf-mallorca', 'urv'],
+  },
   'joan-xxiii': {
-    line: 'clinica', year: '2017–2018',
+    line: 'clinica', year: '2021',
     title: 'Enfermería Hospitalaria — Joan XXIII',
     institution: 'Hospital Universitari Joan XXIII, Tarragona',
     items: [
-      'Hospitalización: cirugía, oncología y endoscopia',
+      'Hospitalización URO-ORL-CVA',
+      'Campaña de vacunación masiva COVID-19',
       'Cuidados en entorno de hospital de tercer nivel',
-      'Relación directa con equipo médico multidisciplinar',
-      'Primera autonomía real en toma de decisiones clínicas',
-    ],
-    connections: ['uib', 'workshops'], // 2017 — simultáneo con UIB Enfermería + Ysonut activo
-  },
-  'son-espases': {
-    line: 'clinica', year: '2018–2021',
-    title: 'Enfermería en Hospital Universitario',
-    institution: 'Hospital Son Espases, Palma de Mallorca',
-    items: [
-      'Cirugía plástica, reparadora y reconstructiva',
-      'Psiquiatría y cuidados complejos hospitalizados',
-      'Gestión avanzada de casos y protocolos de seguridad',
       'Consolidación de criterio clínico enfermero',
     ],
-    connections: ['bioimpedancia', 'preventiva'], // 2018-19 — bioimpedancia y medicina preventiva
+    connections: ['urv', 'enf-huse-reus'],
   },
-  quiron: {
-    line: 'clinica', year: '2019–2020',
-    title: 'Enfermería en Cirugía Especializada',
-    institution: 'Quirón Salud',
+  'cap-ametlla': {
+    line: 'clinica', year: '07–10/2022',
+    title: 'Médico — CAP Ametlla de Mar',
+    institution: 'CAP Ametlla de Mar — Urgencias',
     items: [
-      'Cirugía especializada en entorno hospitalario privado',
-      'Protocolos de excelencia clínica y calidad asistencial',
-      'Gestión avanzada de casos y pacientes complejos',
-      'Trabajo multidisciplinar con criterio médico integrado',
+      'Primer ejercicio como médico tras licenciatura',
+      'Urgencias en atención primaria',
+      'Autonomía médica completa desde el inicio',
+      'Manejo de urgencias ambulatorias',
     ],
-    connections: ['autonomia'], // 2019-20 — autonomía médica emergente
+    connections: ['urv', 'cap-mora'],
   },
   'cap-roses': {
     line: 'clinica', year: '2022–2023',
@@ -180,21 +192,33 @@ const METRO_CONTENT = {
       '30–40 pacientes diarios con autonomía médica completa',
       'Control de HTA, diabetes tipo 2, dislipemia',
       'Urgencias ambulatorias en zonas rurales y costeras',
-      'Primer ejercicio real como médico tras licenciatura',
+      'Consolidación del criterio médico en alta demanda',
     ],
-    connections: ['urv', 'biomarcadores', 'educacion-pac'], // 2021-22 — simultáneo con URV
+    connections: ['cap-ametlla', 'cap-mora', 'biomarcadores', 'educacion-pac'],
+  },
+  'cap-mora': {
+    line: 'clinica', year: '10/2022–06/2023',
+    title: 'Médico — CAP Mora la Nova',
+    institution: 'CAP Mora la Nova · Mora d\'Ebre',
+    items: [
+      'Atención primaria en entorno rural',
+      'Consultas médicas con autonomía total',
+      'Seguimiento de pacientes crónicos y agudos',
+      'Consolidación de competencias en medicina primaria',
+    ],
+    connections: ['cap-ametlla', 'cap-roses'],
   },
   cap: {
     line: 'clinica', year: '2023–2024',
-    title: 'Médico — CAP Sitges · Ametlla de Mar',
-    institution: 'CAP Sitges · Hospital Francolí · Ametlla de Mar',
+    title: 'Médico — CAP Sitges',
+    institution: 'CAP Sitges · Hospital Francolí',
     items: [
       'Atención primaria y urgencias hospitalarias',
       'Guardia urgencias en Hospital Sant Joan de Reus',
       'Consolidación del criterio médico en alta demanda',
       'Más de 2 años de práctica médica independiente',
     ],
-    connections: ['amir', 'educacion-nut', 'longevidad', 'divulgacion-cient'], // 2023 — gran confluencia
+    connections: ['amir', 'educacion-nut', 'longevidad', 'divulgacion-cient'],
   },
   consultas: {
     line: 'clinica', year: 'Acumulado',
@@ -206,7 +230,7 @@ const METRO_CONTENT = {
       'Manejo de riesgo médico con criterio y seguridad',
       'Listo para integrar protocolos de optimización en práctica real',
     ],
-    connections: ['cap', 'amir'], // acumulado de todo el recorrido clínico
+    connections: ['cap', 'amir'],
   },
   'adema-nut': {
     line: 'nutricion', year: '2013',
@@ -242,7 +266,7 @@ const METRO_CONTENT = {
       'Visualización de resultados para motivar la adherencia',
       'Integración en diagnóstico clínico preventivo',
     ],
-    connections: ['son-espases', 'preventiva'], // 2018-19 — junto con Son Espases y Preventiva
+    connections: ['enf-mallorca', 'preventiva', 'biomarcadores'],
   },
   'educacion-nut': {
     line: 'nutricion', year: '2023–hoy',
@@ -266,7 +290,7 @@ const METRO_CONTENT = {
       'Enfoque en factores de riesgo modificables',
       'Datos clínicos, genéticos y de estilo de vida integrados',
     ],
-    connections: ['son-espases', 'bioimpedancia'], // 2018-19 — emerge durante Son Espases
+    connections: ['enf-mallorca', 'bioimpedancia'],
   },
   autonomia: {
     line: 'competencias', year: '2019–2020',
@@ -278,7 +302,7 @@ const METRO_CONTENT = {
       'Confianza construida sobre una base clínica sólida',
       'Preparado para protocolos de vanguardia',
     ],
-    connections: ['quiron'], // 2019-20 — consolidada en Quirón
+    connections: ['enf-mallorca'],
   },
   biomarcadores: {
     line: 'competencias', year: '2021–2022',
@@ -326,7 +350,7 @@ const METRO_CONTENT = {
       'Formación práctica en cambio de hábitos y adherencia',
       'Evidencia científica aplicada a la práctica diaria',
     ],
-    connections: ['uib', 'joan-xxiii'], // 2017-18 — mientras UIB + Joan XXIII
+    connections: ['uib', 'enf-mallorca'],
   },
   'educacion-pac': {
     line: 'divulgacion', year: '2021–2022',
@@ -364,7 +388,7 @@ const METRO_CONTENT = {
       'Dominio de protocolos pre y postoperatorio avanzados',
       'Trabajo coordinado con cirujanos, anestesistas y enfermería',
     ],
-    connections: ['son-espases', 'quiron', 'autonomia'], // directamente vinculada a hospitales
+    connections: ['enf-mallorca', 'autonomia'],
   },
   'gestion-ventas': {
     line: 'competencias', year: '2015–2017',
@@ -400,7 +424,7 @@ const METRO_CONTENT = {
       'Gestión de pacientes de alta complejidad y cronicidad',
       'Toma de decisiones clínicas con autonomía supervisada',
     ],
-    connections: ['joan-xxiii', 'preventiva', 'cirugia'], // directamente de Joan XXIII, sin relación Ysonut
+    connections: ['enf-mallorca', 'preventiva', 'cirugia'],
   },
 };
 
