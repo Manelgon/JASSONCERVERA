@@ -39,6 +39,38 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Jasson Cervera",
+      "image": "https://doctorjassoncervera.automatizatelo.com/doctor-about.png",
+      "description": "Especialista en Medicina Preventiva, Longevidad y Nutrición Clínica. Optimiza tu salud y metabolismo mediante diagnóstico avanzado.",
+      "url": "https://doctorjassoncervera.automatizatelo.com/",
+      "telephone": "+34637478406",
+      "email": "jasson.ca@gmail.com",
+      "medicalSpecialty": [
+        "https://en.wikipedia.org/wiki/Preventive_healthcare",
+        "https://en.wikipedia.org/wiki/Anti-aging_medicine",
+        "https://en.wikipedia.org/wiki/Clinical_nutrition"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona y Palma de Mallorca",
+        "addressRegion": "Illes Balears / Catalunya",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        "Barcelona",
+        "Palma de Mallorca"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/jasson-cervera-685833329/?originalSubdomain=es"
+      ]
+    }
+  </script>
 </head>
 
 <body class="theme-luxury">
@@ -75,7 +107,11 @@
     </div>
     <div class="hero-video-content">
       <div class="hero-video-left">
-        <h1 class="hero-video-title">Dr. Jasson Cervera</h1>
+        <h1 class="hero-video-title">
+          Dr. Jasson Cervera
+          <span style="display:block; font-size:40%; font-weight:400; opacity:0.9; margin-top:8px;"
+            data-i18n="hero.h1_sub">| Medicina Preventiva y Longevidad</span>
+        </h1>
         <p class="hero-video-subtitle" data-i18n="hero.subtitle">
           Medicina integradora orientada a prevenir, no solo a tratar. Biomarcadores, nutrición clínica y estilo de vida
           para optimizar la salud a largo plazo.
@@ -171,7 +207,8 @@
           </p>
         </div>
         <div class="about-image">
-          <img src="/dr.Jasson-Cervera.svg" alt="Dr. Jasson Cervera" class="about-doctor-img" />
+          <img src="/dr.Jasson-Cervera.svg" alt="Dr. Jasson Cervera, Especialista en Medicina Preventiva y Longevidad"
+            loading="lazy" class="about-doctor-img" />
         </div>
       </div>
     </div>

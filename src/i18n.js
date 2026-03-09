@@ -101,6 +101,7 @@ export const ES = {
     'nav.trayectoria': 'Trayectoria',
     'nav.faq': 'Preguntas',
     'nav.contacto': 'Contacto',
+    'hero.h1_sub': '| Medicina Preventiva y Longevidad',
     'hero.subtitle': 'Medicina integradora orientada a prevenir, no solo a tratar. Biomarcadores, nutrición clínica y estilo de vida para optimizar la salud a largo plazo.',
     'hero.feat1_title': 'Medicina preventiva',
     'hero.feat1_desc': 'Anticiparse a la enfermedad mediante diagnóstico avanzado, biomarcadores y medición de la edad biológica.',
