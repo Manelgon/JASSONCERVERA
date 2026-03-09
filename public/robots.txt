@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doctorjassoncervera.automatizatelo.com/sitemap.xml
