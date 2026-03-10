@@ -90,7 +90,7 @@ export const EN = {
     'footer.desc': 'Integrative medicine focused on prevention and longevity optimization.',
     'footer.contact_title': 'Contact',
     'footer.nav_title': 'Navigation',
-    'footer.copy': '© 2026 Dr. Jasson Cervera. All rights reserved.',
+    'footer.copy': '© 2026 Dr. Jasson Cervera Alzate. All rights reserved.',
 };
 
 /* ==============================
@@ -166,7 +166,7 @@ export const ES = {
     'footer.desc': 'Medicina integradora enfocada en la prevención y la optimización de la longevidad.',
     'footer.contact_title': 'Contacto',
     'footer.nav_title': 'Navegación',
-    'footer.copy': '© 2026 Dr. Jasson Cervera. Todos los derechos reservados.',
+    'footer.copy': '© 2026 Dr. Jasson Cervera Alzate. Todos los derechos reservados.',
 };
 
 /* ==============================
