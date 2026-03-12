@@ -58,31 +58,24 @@ export const EN = {
     // Trayectoria
     'tray.accent': 'Career path',
     'tray.title': 'Professional experience map',
-    'tray.sub': 'Click on any station to explore each stage of the journey.',
+    'tray.sub': 'Visual representation of the professional evolution towards preventive medicine and longevity.',
+    'tray.hint': 'Click on the highlighted stations to explore each stage.',
 
     // Legend
-    'legend.formacion': 'Academic training',
+    'legend.formacion': 'Training',
     'legend.clinica': 'Clinical experience',
-    'legend.nutricion': 'Clinical nutrition',
-    'legend.competencias': 'Competencies',
-    'legend.divulgacion': 'Outreach',
-    'legend.consultas': 'Consultations',
+    'legend.metabolismo': 'Metabolism',
+    'legend.comunicacion': 'Communication',
 
-    // SVG map labels
-    'map.bioimpedancia': 'Bioimpedance',
-    'map.bioimpedancia_year': '2018–today',
-    'map.educ_nut': 'Nutr. education',
-    'map.ventas': 'Sales',
-    'map.puntos_venta': 'Points of Sale',
-    'map.habilid_clin': 'Clinical Skills',
-    'map.preventiva': 'Preventive',
-    'map.cirugia': 'Surgery',
-    'map.autonomia': 'Autonomy',
-    'map.biomarcadores': 'Biomarkers',
-    'map.longevidad': 'Longevity',
-    'map.form_prof': 'Prof. training',
-    'map.educ_pac': 'Patient educ.',
-    'map.divulg_cient': 'Science outreach',
+    // SVG track labels
+    'traj.label.formacion': 'TRAINING',
+    'traj.label.clinica': 'CLINICAL',
+    'traj.label.metabolismo': 'METABOLISM',
+    'traj.label.comunicacion': 'COMMUNICATION',
+    'traj.start': 'Start',
+    'traj.start.sub1': 'working with',
+    'traj.start.sub2': 'people',
+    'traj.narrative': 'PEOPLE  →  NUTRITION  →  CLINICAL  →  MEDICINE  →  LONGEVITY',
 
     // FAQ
     'faq.accent': 'Frequently asked questions',
@@ -160,27 +153,20 @@ export const ES = {
     'enfoque.card3_desc': 'Optimizar la biología humana — calidad y esperanza de vida mediante medicina personalizada y basada en datos.',
     'tray.accent': 'Trayectoria',
     'tray.title': 'Mapa de experiencia profesional',
-    'tray.sub': 'Haz clic en cualquier estación para explorar cada etapa del recorrido.',
-    'legend.formacion': 'Formación académica',
+    'tray.sub': 'Representación visual de la evolución profesional hacia medicina preventiva y longevidad.',
+    'tray.hint': 'Haz clic en las estaciones marcadas para explorar cada etapa.',
+    'legend.formacion': 'Formación',
     'legend.clinica': 'Experiencia clínica',
-    'legend.nutricion': 'Nutrición clínica',
-    'legend.competencias': 'Competencias',
-    'legend.divulgacion': 'Divulgación',
-    'legend.consultas': 'Consultas',
-    'map.bioimpedancia': 'Bioimpedancia',
-    'map.bioimpedancia_year': '2018–hoy',
-    'map.educ_nut': 'Educ. nutricional',
-    'map.ventas': 'Ventas',
-    'map.puntos_venta': 'Puntos Venta',
-    'map.habilid_clin': 'Habilid. Clínicas',
-    'map.preventiva': 'Preventiva',
-    'map.cirugia': 'Cirugía',
-    'map.autonomia': 'Autonomía',
-    'map.biomarcadores': 'Biomarcadores',
-    'map.longevidad': 'Longevidad',
-    'map.form_prof': 'Form. prof.',
-    'map.educ_pac': 'Educ. paciente',
-    'map.divulg_cient': 'Divulgación cient.',
+    'legend.metabolismo': 'Metabolismo',
+    'legend.comunicacion': 'Comunicación',
+    'traj.label.formacion': 'FORMACIÓN',
+    'traj.label.clinica': 'CLÍNICA',
+    'traj.label.metabolismo': 'METABOLISMO',
+    'traj.label.comunicacion': 'COMUNICACIÓN',
+    'traj.start': 'Inicio',
+    'traj.start.sub1': 'trabajo con',
+    'traj.start.sub2': 'personas',
+    'traj.narrative': 'PERSONAS  →  NUTRICIÓN  →  CLÍNICA  →  MEDICINA  →  LONGEVIDAD',
     'faq.accent': 'Preguntas frecuentes',
     'faq.title': 'Profundizando en mi visión clínica<br> y abordaje integral',
     'faq.q1': '¿Qué valor aporta tu perfil multidisciplinar en una clínica de longevidad?',
@@ -205,7 +191,16 @@ export const ES = {
    METRO CONTENT — English translations
    ============================== */
 export const METRO_CONTENT_EN = {
-    adema: {
+    start: {
+        title: 'Start — working with people',
+        institution: 'Family business & customer service',
+        items: [
+            'Early participation in the family business',
+            'Direct customer service',
+            'First management responsibilities',
+        ],
+    },
+    dietetica: {
         title: 'Advanced Diploma in Dietetics',
         institution: 'A.D.E.M.A.',
         items: [
@@ -215,9 +210,9 @@ export const METRO_CONTENT_EN = {
             'Foundation for the subsequent integrative career path',
         ],
     },
-    uib: {
+    enfermeria: {
         title: 'Nursing Degree',
-        institution: 'University of the Balearic Islands',
+        institution: 'University of the Balearic Islands (UIB)',
         items: [
             'Deep understanding of the human body through practice',
             'Hospitalization: surgery, oncology, psychiatry',
@@ -225,9 +220,9 @@ export const METRO_CONTENT_EN = {
             'Holistic patient care',
         ],
     },
-    urv: {
+    medicina: {
         title: 'Medical Degree',
-        institution: 'Universitat Rovira i Virgili',
+        institution: 'Universitat Rovira i Virgili (URV)',
         items: [
             'Full training during the COVID-19 pandemic',
             'Mass vaccination and health crisis management',
@@ -235,7 +230,7 @@ export const METRO_CONTENT_EN = {
             'Specialization towards preventive medicine and longevity',
         ],
     },
-    amir: {
+    master: {
         title: 'Master in Aesthetic Medicine, Nutrition & Anti-aging',
         institution: 'AMIR',
         items: [
@@ -245,244 +240,93 @@ export const METRO_CONTENT_EN = {
             'Convergence of the entire career path towards longevity',
         ],
     },
-    'enf-mallorca': {
-        title: 'Hospital Nursing — Mallorca',
+    'enf-hosp': {
+        title: 'Hospital Nursing',
         institution: 'HUSE · H. Juaneda Miramar · Quirón Salud',
         items: [
-            'Digestive Endoscopy/ERCP Department (HUSE)',
-            'Hospitalization: Psychiatry, Oncology, MIN (H. Juaneda Miramar)',
-            'Hospitalization: DG, CRD, MIN, UCE, COT (HUSE)',
-            'Hospitalization: Cardio-Internal Medicine (Quirón)',
+            'Digestive / Endoscopy (HUSE)',
+            'Psychiatry · Oncology · Internal Medicine (Juaneda Miramar)',
+            'Cardiology · Internal Medicine (Quirón)',
+            'Hospitalization across multiple specialized units',
         ],
     },
-    'enf-huse-reus': {
-        title: 'Hospital Nursing — COVID',
+    covid: {
+        title: 'COVID Pandemic',
         institution: 'H.U. Son Espases · H.U. Sant Joan de Reus',
         items: [
-            'Maxillofacial Surgery Department (HUSE)',
-            'Vascular Surgery & Angiology Department (HUSE)',
-            'COVID-19 / Social Healthcare Hospitalization (H.U. Sant Joan de Reus)',
-            'Frontline clinical management during the pandemic',
+            'COVID-19 hospitalization (Sant Joan de Reus)',
+            'Maxillofacial Surgery (Son Espases)',
+            'Vascular Surgery & Angiology (Son Espases)',
+            'Frontline clinical management during pandemic',
         ],
     },
     'joan-xxiii': {
-        title: 'Hospital Nursing — Joan XXIII',
+        title: 'Joan XXIII Hospital',
         institution: 'Joan XXIII University Hospital, Tarragona',
         items: [
-            'Hospitalization: URO-ORL-CVA',
+            'Urology · ENT · Cerebrovascular pathology',
             'COVID-19 mass vaccination campaign',
             'Care in a tertiary hospital environment',
             'Consolidation of nursing clinical judgment',
         ],
     },
-    'cap-ametlla': {
-        title: 'Physician — CAP Ametlla de Mar',
-        institution: 'CAP Ametlla de Mar — Emergency',
+    'map-ics': {
+        title: 'Primary Care Physician — ICS',
+        institution: 'CAP Ametlla de Mar · Mora la Nova · Roses · Sitges',
         items: [
-            'First medical practice after graduation',
-            'Primary care emergencies',
-            'Full medical autonomy from the start',
-            'Ambulatory emergency management',
-        ],
-    },
-    'cap-roses': {
-        title: 'Primary Care & Emergency Physician',
-        institution: 'CAP Roses · CAP Cadaqués',
-        items: [
-            '30–40 patients daily with full medical autonomy',
-            'Management of hypertension, type 2 diabetes, dyslipidemia',
-            'Ambulatory emergencies in rural and coastal areas',
-            'Consolidation of medical judgment in high demand',
-        ],
-    },
-    'cap-mora': {
-        title: 'Physician — CAP Mora la Nova',
-        institution: 'CAP Mora la Nova · Mora d\'Ebre',
-        items: [
-            'Primary care in a rural setting',
-            'Medical consultations with full autonomy',
-            'Chronic and acute patient follow-up',
-            'Consolidation of competencies in primary medicine',
-        ],
-    },
-    cap: {
-        title: 'Physician — CAP Sitges',
-        institution: 'CAP Sitges · Hospital Francolí',
-        items: [
-            'Primary care and hospital emergencies',
-            'Emergency shifts at Hospital Sant Joan de Reus',
-            'Consolidation of medical judgment in high demand',
-            'Over 2 years of independent medical practice',
-        ],
-    },
-    consultas: {
-        title: '7,000+ Medical Consultations',
-        institution: 'Accumulated clinical career',
-        items: [
-            'Over 7,000 primary care consultations',
-            'More than 8 different healthcare centers',
-            'Medical risk management with judgment and safety',
-            'Ready to integrate optimization protocols into real practice',
-        ],
-    },
-    'adema-nut': {
-        title: 'Foundation in Dietetics & Clinical Nutrition',
-        institution: 'A.D.E.M.A.',
-        items: [
-            'Diet therapy and clinical nutrition from the fundamentals',
-            'Metabolism and body composition',
-            'First integrative approach to health through nutrition',
-            'Foundation for subsequent advanced nutritional counseling',
+            'CAP Ametlla de Mar (emergency)',
+            'CAP Mora la Nova / Mora d\'Ebre',
+            'CAP Roses / Cadaqués',
+            'CAP Sitges · over 7,000 accumulated consultations',
         ],
     },
     ysonut: {
-        title: 'Specialized Nutritional Advisor',
+        title: 'YSONUT — Nutrition & Supplementation',
         institution: 'Ysonut Laboratories',
         items: [
-            'Personalized nutritional counseling in aesthetic clinics',
-            'Protein nutrition and body recomposition protocols',
-            'Follow-up and adherence in habit change processes',
-            'Continuous training in advanced clinical nutrition',
+            'Responsible for nutritional point of care',
+            'Nutritional counseling and metabolic supplementation',
+            'Nutritional education and operational management',
+            'Orders, traceability, billing and team coordination',
+            'Proposal and implementation of suggestion box',
+            'Operational feedback to the national team',
         ],
     },
-    bioimpedancia: {
-        title: 'Bioimpedance & Body Composition',
-        institution: 'Advanced metabolic analysis',
+    delegado: {
+        title: 'Student delegate',
+        institution: 'Secondary school · Dietetics · Nursing',
         items: [
-            'Assessment of muscle mass, visceral fat and body water',
-            'Longitudinal metabolic patient monitoring',
-            'Results visualization to motivate adherence',
-            'Integration in preventive clinical diagnosis',
+            'Student representative in three training stages',
+            'Proposal management and coordination with faculty',
+            'Development of leadership and communication skills',
         ],
     },
-    'educacion-nut': {
-        title: 'Patient Nutritional Education',
-        institution: 'Integrative clinical practice',
+    discursos: {
+        title: 'Graduation speeches',
+        institution: 'UIB (Nursing) · URV (Medicine)',
         items: [
-            'Patient empowerment through metabolic knowledge',
-            'Sustainable habit change and personalized plans',
-            'Optimization with a preventive and longevity approach',
-            'Nutrition integrated into personalized medicine protocols',
+            'Chosen by classmates to represent the class',
+            'Nursing graduation speech (UIB, 2017)',
+            'Medicine graduation speech (URV, 2022)',
         ],
     },
-    preventiva: {
-        title: 'Preventive Medicine',
-        institution: 'Core practice axis',
+    charlas: {
+        title: 'Educational talks',
+        institution: 'Outreach in nutrition and healthy habits',
         items: [
-            'Getting ahead of disease through advanced diagnostics',
-            'Biological age and aging biomarkers',
-            'Focus on modifiable risk factors',
-            'Integrated clinical, genetic and lifestyle data',
+            'Training sessions in clinical nutrition and body composition',
+            'Education on adherence to healthy habits',
+            'Scientific communication adapted to the general public',
         ],
     },
-    autonomia: {
-        title: 'Full Medical Autonomy',
-        institution: 'Real clinical practice',
+    end: {
+        title: 'Preventive medicine & longevity',
+        institution: 'Clinical focus on metabolism, prevention and health optimisation',
         items: [
-            'Independent clinical decisions in high volume',
-            'Emergency management with judgment and safety',
-            'Confidence built on a solid clinical foundation',
-            'Prepared for cutting-edge protocols',
-        ],
-    },
-    biomarcadores: {
-        title: 'Biomarkers & Advanced Diagnostics',
-        institution: 'Precision medicine',
-        items: [
-            'Clinical interpretation of basic and advanced biomarkers',
-            'Inflammatory, metabolic and hormonal markers',
-            'Cardiovascular and metabolic risk diagnosis',
-            'Foundation for personalized and predictive medicine',
-        ],
-    },
-    longevidad: {
-        title: 'Longevity & Biological Optimization',
-        institution: 'Longevity medicine',
-        items: [
-            'Optimizing quality and life expectancy',
-            'Personalized medicine based on data and biomarkers',
-            'Genetics, epigenetics and lifestyle integrated',
-            'The ultimate goal of the entire professional career',
-        ],
-    },
-    'formacion-prof': {
-        title: 'Training for Healthcare Professionals',
-        institution: 'Ysonut Laboratories',
-        items: [
-            'Training teams in aesthetic clinics on protein nutrition',
-            'Nutritional counseling protocols for professionals',
-            'Internal clinical materials and guidelines',
-            'Scientific communication adapted to the professional context',
-        ],
-    },
-    workshops: {
-        title: 'Clinical Nutrition Workshops',
-        institution: 'Professional outreach',
-        items: [
-            'Training sessions on body composition and bioimpedance',
-            'Tools for patient education in clinical settings',
-            'Practical training on habit change and adherence',
-            'Scientific evidence applied to daily practice',
-        ],
-    },
-    'educacion-pac': {
-        title: 'Patient Education',
-        institution: 'Medical practice',
-        items: [
-            'Clear communication of complex medical concepts',
-            'Patient empowerment for decision-making',
-            'Visual tools to make progress tangible',
-            'Long-term therapeutic adherence as a goal',
-        ],
-    },
-    'divulgacion-cient': {
-        title: 'Science Communication',
-        institution: 'Medical communication',
-        items: [
-            'Translating longevity evidence for the general public',
-            'Communication oriented towards active prevention',
-            'Development of high-quality educational content',
-            'Building bridges between science and society',
-        ],
-    },
-    cirugia: {
-        title: 'Specialized Surgical Assistance',
-        institution: 'Son Espases · Quirón Salud',
-        items: [
-            'Plastic, reparative and reconstructive surgery at Son Espases',
-            'Highly complex specialized surgery at Quirón Salud',
-            'Mastery of advanced pre and post-operative protocols',
-            'Coordinated work with surgeons, anesthesiologists and nursing staff',
-        ],
-    },
-    'gestion-ventas': {
-        title: 'Sales Management & Growth',
-        institution: 'Ysonut Laboratories',
-        items: [
-            'Sustained sales increase in assigned territory',
-            'Clinic acquisition and retention strategy',
-            'Commercial KPI tracking and quarterly targets',
-            'Product communication adapted to professional profiles',
-        ],
-    },
-    'puntos-venta': {
-        title: 'Point of Sale Network Management',
-        institution: 'Ysonut Laboratories',
-        items: [
-            'Coordination of aesthetic clinics and dietary centers network',
-            'Implementation of presentation and display protocols',
-            'On-site team training at points of sale',
-            'Stock management, promotions and marketing materials',
-        ],
-    },
-    'cuidados-clinicos': {
-        title: 'Hospital Clinical Skills',
-        institution: 'Joan XXIII Hospital, Tarragona',
-        items: [
-            'Nursing care in surgery, oncology and endoscopy',
-            'Multidisciplinary medical teamwork at tertiary level',
-            'Complex and chronic patient management',
-            'Clinical decision-making with supervised autonomy',
+            'Metabolism and biomarkers',
+            'Personalized medicine',
+            'Ageing optimization',
+            'Advanced preventive medicine',
         ],
     },
 };
@@ -491,9 +335,10 @@ export const METRO_CONTENT_EN = {
    LINE NAMES — English
    ============================== */
 export const LINE_NAMES_EN = {
-    formacion: 'Academic training',
-    clinica: 'Clinical experience',
-    nutricion: 'Clinical nutrition',
-    competencias: 'Competencies',
-    divulgacion: 'Outreach',
+    formacion:    'Training',
+    clinica:      'Clinical experience',
+    metabolismo:  'Metabolism',
+    comunicacion: 'Communication',
+    final:        'Convergence',
+    inicio:       'Start',
 };

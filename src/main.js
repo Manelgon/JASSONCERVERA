@@ -52,22 +52,24 @@ function initNavbar() {
 }
 
 /* ==============================
-   METRO MAP — Data
+   TRAYECTORIA MAP — Data
    ============================== */
 const LINE_COLORS = {
-  formacion: '#B38645',
-  clinica: '#2D8B7A',
-  nutricion: '#4A7BB7',
-  competencias: '#C07640',
-  divulgacion: '#7B5EA7',
+  formacion:    '#1B4F8A',
+  clinica:      '#2D8B5E',
+  metabolismo:  '#D4772C',
+  comunicacion: '#7B5EA7',
+  final:        '#B38645',
+  inicio:       '#B0AAA4',
 };
 
 const LINE_NAMES_ES = {
-  formacion: 'Formación académica',
-  clinica: 'Experiencia clínica',
-  nutricion: 'Nutrición clínica',
-  competencias: 'Competencias',
-  divulgacion: 'Divulgación',
+  formacion:    'Formación',
+  clinica:      'Experiencia clínica',
+  metabolismo:  'Metabolismo',
+  comunicacion: 'Comunicación',
+  final:        'Convergencia',
+  inicio:       'Inicio',
 };
 
 function getLineNames() {
@@ -88,7 +90,20 @@ function getMetroItems(id) {
 }
 
 const METRO_CONTENT = {
-  adema: {
+  /* ── ESTACIÓN INICIO ─────────────────────────────── */
+  start: {
+    line: 'inicio', year: 'Inicio',
+    title: 'Inicio — trabajo con personas',
+    institution: 'Negocio familiar y atención al público',
+    items: [
+      'Participación temprana en negocio familiar',
+      'Atención directa al público',
+      'Primeras responsabilidades de gestión',
+    ],
+  },
+
+  /* ── LÍNEA 1: FORMACIÓN ──────────────────────────── */
+  dietetica: {
     line: 'formacion', year: '2013',
     title: 'Técnico Superior en Dietética',
     institution: 'A.D.E.M.A.',
@@ -98,33 +113,30 @@ const METRO_CONTENT = {
       'Primer contacto con el abordaje nutricional de pacientes',
       'Base de la posterior trayectoria integradora',
     ],
-    connections: ['adema-nut'], // 2013 — ambos en ADEMA simultáneamente
   },
-  uib: {
+  enfermeria: {
     line: 'formacion', year: '2017',
     title: 'Grado en Enfermería',
-    institution: 'Universitat de les Illes Balears',
+    institution: 'Universitat de les Illes Balears (UIB)',
     items: [
       'Comprensión profunda del cuerpo humano desde la práctica',
       'Hospitalización: cirugía, oncología, psiquiatría',
       'Habilidades clínicas y de comunicación médica',
       'Cuidado integral del paciente',
     ],
-    connections: ['enf-mallorca', 'workshops'],
   },
-  urv: {
+  medicina: {
     line: 'formacion', year: '2022',
     title: 'Grado en Medicina',
-    institution: 'Universitat Rovira i Virgili',
+    institution: 'Universitat Rovira i Virgili (URV)',
     items: [
       'Formación completa durante la pandemia COVID-19',
       'Vacunación masiva y gestión en crisis sanitaria',
       'Integración de enfermería y nutrición en el criterio médico',
       'Especialización hacia medicina preventiva y longevidad',
     ],
-    connections: ['cap-roses', 'biomarcadores', 'educacion-pac'], // 2021-22 — todo confluye
   },
-  amir: {
+  master: {
     line: 'formacion', year: '2023',
     title: 'Máster Medicina Estética, Nutrición y Antienvejecimiento',
     institution: 'AMIR',
@@ -134,361 +146,171 @@ const METRO_CONTENT = {
       'Biomarcadores, epigenética y edad biológica',
       'Convergencia de toda la trayectoria hacia la longevidad',
     ],
-    connections: ['cap', 'educacion-nut', 'longevidad', 'divulgacion-cient'], // 2023 — gran confluencia
   },
-  'enf-mallorca': {
+
+  /* ── LÍNEA 2: CLÍNICA ────────────────────────────── */
+  'enf-hosp': {
     line: 'clinica', year: '2017–2019',
-    title: 'H. Juaneda Miramar, Quirón',
+    title: 'Enfermería Hospitalaria',
     institution: 'HUSE · H. Juaneda Miramar · Quirón Salud',
     items: [
-      'Gabinete Digestivo Endoscopia/CPRE (HUSE)',
-      'Hospitalización Psiquiatría-Oncología-MIN (H. Juaneda Miramar)',
-      'Hospitalización DG, CRD, MIN, UCE, COT (HUSE)',
-      'Hospitalización Cardio-Medicina Interna (Quirón)',
+      'Digestivo / Endoscopia (HUSE)',
+      'Psiquiatría · Oncología · Medicina Interna (Juaneda Miramar)',
+      'Cardiología · Medicina Interna (Quirón)',
+      'Hospitalización en múltiples unidades especializadas',
     ],
-    connections: ['uib', 'bioimpedancia', 'preventiva', 'workshops'],
   },
-  'enf-huse-reus': {
+  covid: {
     line: 'clinica', year: '2020',
-    title: 'Enfermería Hospitalaria — COVID',
+    title: 'Pandemia COVID',
     institution: 'H.U. Son Espases · H.U. Sant Joan de Reus',
     items: [
-      'Gabinete Cirugía Maxilofacial (HUSE)',
-      'Gabinete Cirugía Vascular y Angiología (HUSE)',
-      'Hospitalización COVID-19 / Sociosanitario (H.U. Sant Joan de Reus)',
+      'Hospitalización COVID-19 (Sant Joan de Reus)',
+      'Cirugía Maxilofacial (Son Espases)',
+      'Cirugía Vascular y Angiología (Son Espases)',
       'Gestión clínica en primera línea de pandemia',
     ],
-    connections: ['enf-mallorca', 'urv'],
   },
   'joan-xxiii': {
     line: 'clinica', year: '2021',
-    title: 'Enfermería Hospitalaria — Joan XXIII',
+    title: 'Hospital Joan XXIII',
     institution: 'Hospital Universitari Joan XXIII, Tarragona',
     items: [
-      'Hospitalización URO-ORL-CVA',
+      'Hospitalización URO · ORL · Patología cerebrovascular',
       'Campaña de vacunación masiva COVID-19',
       'Cuidados en entorno de hospital de tercer nivel',
       'Consolidación de criterio clínico enfermero',
     ],
-    connections: ['urv', 'enf-huse-reus'],
   },
-  'cap-ametlla': {
-    line: 'clinica', year: '07–10/2022',
-    title: 'Médico — CAP Ametlla de Mar',
-    institution: 'CAP Ametlla de Mar — Urgencias',
+  'map-ics': {
+    line: 'clinica', year: '2022–actual',
+    title: 'Médico Atención Primaria — ICS',
+    institution: 'CAP Ametlla de Mar · Mora la Nova · Roses · Sitges',
     items: [
-      'Primer ejercicio como médico tras licenciatura',
-      'Urgencias en atención primaria',
-      'Autonomía médica completa desde el inicio',
-      'Manejo de urgencias ambulatorias',
+      'CAP Ametlla de Mar (urgencias)',
+      'CAP Mora la Nova / Mora d\'Ebre',
+      'CAP Roses / Cadaqués',
+      'CAP Sitges · más de 7.000 consultas acumuladas',
     ],
-    connections: ['urv', 'cap-mora'],
-  },
-  'cap-roses': {
-    line: 'clinica', year: '2022–2023',
-    title: 'Médico de Atención Primaria y Urgencias',
-    institution: 'CAP Roses · CAP Cadaqués',
-    items: [
-      '30–40 pacientes diarios con autonomía médica completa',
-      'Control de HTA, diabetes tipo 2, dislipemia',
-      'Urgencias ambulatorias en zonas rurales y costeras',
-      'Consolidación del criterio médico en alta demanda',
-    ],
-    connections: ['cap-ametlla', 'cap-mora', 'biomarcadores', 'educacion-pac'],
-  },
-  'cap-mora': {
-    line: 'clinica', year: '10/2022–06/2023',
-    title: 'Médico — CAP Mora la Nova',
-    institution: 'CAP Mora la Nova · Mora d\'Ebre',
-    items: [
-      'Atención primaria en entorno rural',
-      'Consultas médicas con autonomía total',
-      'Seguimiento de pacientes crónicos y agudos',
-      'Consolidación de competencias en medicina primaria',
-    ],
-    connections: ['cap-ametlla', 'cap-roses'],
-  },
-  cap: {
-    line: 'clinica', year: '2023–2024',
-    title: 'Médico — CAP Sitges',
-    institution: 'CAP Sitges · Hospital Francolí',
-    items: [
-      'Atención primaria y urgencias hospitalarias',
-      'Guardia urgencias en Hospital Sant Joan de Reus',
-      'Consolidación del criterio médico en alta demanda',
-      'Más de 2 años de práctica médica independiente',
-    ],
-    connections: ['amir', 'educacion-nut', 'longevidad', 'divulgacion-cient'],
-  },
-  consultas: {
-    line: 'clinica', year: 'Acumulado',
-    title: '7.000+ Consultas Médicas',
-    institution: 'Trayectoria clínica acumulada',
-    items: [
-      'Más de 7.000 consultas en atención primaria',
-      'Más de 8 centros sanitarios distintos',
-      'Manejo de riesgo médico con criterio y seguridad',
-      'Listo para integrar protocolos de optimización en práctica real',
-    ],
-    connections: ['cap', 'amir'],
-  },
-  'adema-nut': {
-    line: 'nutricion', year: '2013',
-    title: 'Base en Dietética y Nutrición Clínica',
-    institution: 'A.D.E.M.A.',
-    items: [
-      'Dietoterapia y nutrición clínica desde los fundamentos',
-      'Metabolismo y composición corporal',
-      'Primer enfoque integrativo de salud a través de la alimentación',
-      'Base para el asesoramiento nutricional avanzado posterior',
-    ],
-    connections: ['adema'], // 2013 — misma institución que Técnico en Dietética
-  },
-  ysonut: {
-    line: 'nutricion', year: '2015–2017',
-    title: 'Asesor Nutricional Especializado',
-    institution: 'Laboratorios Ysonut',
-    items: [
-      'Asesoramiento nutricional individualizado en clínicas estéticas',
-      'Protocolos de nutrición proteica y recomposición corporal',
-      'Seguimiento y adherencia en procesos de cambio de hábitos',
-      'Formación continua en nutrición clínica avanzada',
-    ],
-    connections: ['formacion-prof'], // 2015 — formación profesionales Ysonut simultánea
-  },
-  bioimpedancia: {
-    line: 'nutricion', year: '2018–presente',
-    title: 'Bioimpedancia y Composición Corporal',
-    institution: 'Análisis metabólico avanzado',
-    items: [
-      'Evaluación de masa muscular, grasa visceral y agua corporal',
-      'Seguimiento metabólico longitudinal del paciente',
-      'Visualización de resultados para motivar la adherencia',
-      'Integración en diagnóstico clínico preventivo',
-    ],
-    connections: ['enf-mallorca', 'preventiva', 'biomarcadores'],
-  },
-  'educacion-nut': {
-    line: 'nutricion', year: '2023–hoy',
-    title: 'Educación Nutricional del Paciente',
-    institution: 'Práctica clínica integradora',
-    items: [
-      'Empoderamiento del paciente a través del conocimiento metabólico',
-      'Cambio de hábitos sostenibles y personalización de planes',
-      'Optimización con enfoque preventivo y de longevidad',
-      'Nutrición integrada en protocolos de medicina personalizada',
-    ],
-    connections: ['amir', 'cap', 'longevidad', 'divulgacion-cient'], // 2023 — confluencia total
-  },
-  preventiva: {
-    line: 'competencias', year: '2018–core',
-    title: 'Medicina Preventiva',
-    institution: 'Eje central de práctica',
-    items: [
-      'Anticiparse a la enfermedad mediante diagnóstico avanzado',
-      'Edad biológica y biomarcadores de envejecimiento',
-      'Enfoque en factores de riesgo modificables',
-      'Datos clínicos, genéticos y de estilo de vida integrados',
-    ],
-    connections: ['enf-mallorca', 'bioimpedancia'],
-  },
-  autonomia: {
-    line: 'competencias', year: '2019–2020',
-    title: 'Autonomía Médica Completa',
-    institution: 'Práctica clínica real',
-    items: [
-      'Decisiones clínicas independientes en alto volumen',
-      'Gestión de urgencias con criterio y seguridad',
-      'Confianza construida sobre una base clínica sólida',
-      'Preparado para protocolos de vanguardia',
-    ],
-    connections: ['enf-mallorca'],
-  },
-  biomarcadores: {
-    line: 'competencias', year: '2021–2022',
-    title: 'Biomarcadores y Diagnóstico Avanzado',
-    institution: 'Medicina de precisión',
-    items: [
-      'Interpretación clínica de biomarcadores básicos y avanzados',
-      'Marcadores inflamatorios, metabólicos y hormonales',
-      'Diagnóstico de riesgo cardiovascular y metabólico',
-      'Base para medicina personalizada y predictiva',
-    ],
-    connections: ['urv', 'cap-roses', 'educacion-pac'], // 2021-22 — junto con URV + CAP Roses
-  },
-  longevidad: {
-    line: 'competencias', year: '2023 — objetivo',
-    title: 'Longevidad y Optimización Biológica',
-    institution: 'Medicina de longevidad',
-    items: [
-      'Optimizar calidad y esperanza de vida',
-      'Medicina personalizada basada en datos y biomarcadores',
-      'Genética, epigenética y estilo de vida integrados',
-      'El objetivo final de toda la trayectoria profesional',
-    ],
-    connections: ['amir', 'cap', 'educacion-nut', 'divulgacion-cient'], // 2023 — gran confluencia
-  },
-  'formacion-prof': {
-    line: 'divulgacion', year: '2015–2017',
-    title: 'Formación a Profesionales Sanitarios',
-    institution: 'Laboratorios Ysonut',
-    items: [
-      'Formación de equipos en clínicas estéticas sobre nutrición proteica',
-      'Protocolos de asesoramiento nutricional para profesionales',
-      'Materiales y guías clínicas internas',
-      'Comunicación científica adaptada al contexto profesional',
-    ],
-    connections: ['ysonut'], // 2015 — simultáneo con asesoría Ysonut
-  },
-  workshops: {
-    line: 'divulgacion', year: '2016–2018',
-    title: 'Workshops de Nutrición Clínica',
-    institution: 'Divulgación profesional',
-    items: [
-      'Sesiones formativas en composición corporal y bioimpedancia',
-      'Herramientas para la educación del paciente en clínica',
-      'Formación práctica en cambio de hábitos y adherencia',
-      'Evidencia científica aplicada a la práctica diaria',
-    ],
-    connections: ['uib', 'enf-mallorca'],
-  },
-  'educacion-pac': {
-    line: 'divulgacion', year: '2021–2022',
-    title: 'Educación al Paciente',
-    institution: 'Práctica médica',
-    items: [
-      'Comunicación clara de conceptos médicos complejos',
-      'Empoderamiento del paciente para tomar decisiones',
-      'Herramientas visuales para tangibilizar el progreso',
-      'Adherencia terapéutica a largo plazo como objetivo',
-    ],
-    connections: ['urv', 'cap-roses', 'biomarcadores'], // 2021-22 — durante URV + CAP Roses
-  },
-  'divulgacion-cient': {
-    line: 'divulgacion', year: '2023+',
-    title: 'Divulgación Científica',
-    institution: 'Comunicación médica',
-    items: [
-      'Traducir la evidencia en longevidad al público general',
-      'Comunicación orientada a la prevención activa',
-      'Desarrollo de contenido educativo de alta calidad',
-      'Construir puentes entre la ciencia y la sociedad',
-    ],
-    connections: ['amir', 'cap', 'educacion-nut', 'longevidad'], // 2023 — confluencia total
   },
 
-  /* === NUEVAS COMPETENCIAS === */
-  cirugia: {
-    line: 'competencias', year: '2018–2020',
-    title: 'Asistencia Quirúrgica Especializada',
-    institution: 'Son Espases · Quirón Salud',
-    items: [
-      'Cirugía plástica, reparadora y reconstructiva en Son Espases',
-      'Cirugía especializada de alta complejidad en Quirón Salud',
-      'Dominio de protocolos pre y postoperatorio avanzados',
-      'Trabajo coordinado con cirujanos, anestesistas y enfermería',
-    ],
-    connections: ['enf-mallorca', 'autonomia'],
-  },
-  'gestion-ventas': {
-    line: 'competencias', year: '2015–2017',
-    title: 'Gestión Comercial y Crecimiento de Ventas',
+  /* ── LÍNEA 3: METABOLISMO ────────────────────────── */
+  ysonut: {
+    line: 'metabolismo', year: '2014–2016',
+    title: 'YSONUT — Nutrición y Suplementación',
     institution: 'Laboratorios Ysonut',
     items: [
-      'Incremento sostenido de ventas en zona asignada',
-      'Estrategia de captación y fidelización de clínicas',
-      'Seguimiento de KPIs comerciales y objetivos trimestrales',
-      'Comunicación del producto adaptada al perfil profesional',
+      'Responsable de punto nutricional',
+      'Asesoramiento nutricional y suplementación metabólica',
+      'Educación nutricional y gestión operativa del centro',
+      'Pedidos, trazabilidad, facturación y coordinación de equipo',
+      'Propuesta e implementación de buzón de sugerencias',
+      'Feedback operativo al equipo nacional',
     ],
-    connections: ['ysonut', 'puntos-venta', 'formacion-prof'], // núcleo comercial Ysonut
   },
-  'puntos-venta': {
-    line: 'competencias', year: '2016–2018',
-    title: 'Gestión de Red de Puntos de Venta',
-    institution: 'Laboratorios Ysonut',
+
+  /* ── LÍNEA 4: COMUNICACIÓN ───────────────────────── */
+  delegado: {
+    line: 'comunicacion', year: 'Varias etapas',
+    title: 'Delegado estudiantil',
+    institution: 'Bachillerato · Dietética · Enfermería',
     items: [
-      'Coordinación de red de clínicas estéticas y centros dietéticos',
-      'Implantación de protocolos de presentación y exposición',
-      'Formación in situ de equipos en punto de venta',
-      'Gestión de stock, promociones y materiales de marketing',
+      'Representante de estudiantes en tres etapas formativas',
+      'Gestión de propuestas y coordinación con el claustro',
+      'Desarrollo de habilidades de liderazgo y comunicación',
     ],
-    connections: ['gestion-ventas', 'ysonut', 'formacion-prof'], // extensión directa de ventas Ysonut
   },
-  'cuidados-clinicos': {
-    line: 'competencias', year: '2017–2018',
-    title: 'Habilidades Clínicas Hospitalarias',
-    institution: 'Hospital Joan XXIII, Tarragona',
+  discursos: {
+    line: 'comunicacion', year: '2017 y 2022',
+    title: 'Discursos de graduación',
+    institution: 'UIB (Enfermería) · URV (Medicina)',
     items: [
-      'Cuidados de enfermería en cirugía, oncología y endoscopia',
-      'Trabajo en equipo médico multidisciplinar de tercer nivel',
-      'Gestión de pacientes de alta complejidad y cronicidad',
-      'Toma de decisiones clínicas con autonomía supervisada',
+      'Elegido por sus compañeros para representar la promoción',
+      'Discurso de graduación de Enfermería (UIB, 2017)',
+      'Discurso de graduación de Medicina (URV, 2022)',
     ],
-    connections: ['enf-mallorca', 'preventiva', 'cirugia'],
+  },
+  charlas: {
+    line: 'comunicacion', year: 'Continuo',
+    title: 'Charlas educativas',
+    institution: 'Divulgación en nutrición y hábitos saludables',
+    items: [
+      'Sesiones formativas en nutrición clínica y composición corporal',
+      'Educación en adherencia a hábitos saludables',
+      'Comunicación científica adaptada al público general',
+    ],
+  },
+
+  /* ── ESTACIÓN FINAL ──────────────────────────────── */
+  end: {
+    line: 'final', year: 'Convergencia',
+    title: 'Medicina preventiva y longevidad',
+    institution: 'Enfoque clínico en metabolismo, prevención y optimización de la salud',
+    items: [
+      'Metabolismo y biomarcadores',
+      'Medicina personalizada',
+      'Optimización del envejecimiento',
+      'Medicina preventiva avanzada',
+    ],
   },
 };
 
 
 /* ==============================
-   METRO MAP — Interactivity
+   TRAYECTORIA MAP — Interactivity
    ============================== */
 function initMetroMap() {
-  const stations = document.querySelectorAll('.metro-station');
+  const stations = document.querySelectorAll('.traj-station');
   const panel = document.getElementById('metro-panel');
   const panelBody = panel?.querySelector('.metro-panel-body');
   const panelClose = panel?.querySelector('.metro-tooltip-close');
 
   if (!panel || !panelBody || stations.length === 0) return;
 
-  /* ── Inject ripple ring into every station ─────────── */
+  /* ── Inject ripple rings into expandable stations ── */
+  const svgNS = 'http://www.w3.org/2000/svg';
   stations.forEach((station, i) => {
+    if (!station.classList.contains('traj-expandable')) return;
     const circles = station.querySelectorAll('circle');
-    // outer visible circle is index 1 (index 0 is the transparent hit area)
+    // The outermost visible border circle (index 1 in expandables, skip hit area at 0)
     const outerCircle = circles.length >= 2 ? circles[1] : circles[0];
     if (!outerCircle) return;
 
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const ripple = document.createElementNS(svgNS, 'circle');
-    ripple.setAttribute('cx', outerCircle.getAttribute('cx'));
-    ripple.setAttribute('cy', outerCircle.getAttribute('cy'));
-    ripple.setAttribute('r', outerCircle.getAttribute('r'));
-    ripple.setAttribute('stroke', outerCircle.getAttribute('stroke') || '#B38645');
-    ripple.setAttribute('class', 'metro-ripple');
-    // Stagger start: spread 24 stations across 3s window
-    ripple.style.animationDelay = `${((i * 0.37) % 3).toFixed(2)}s`;
-    station.insertBefore(ripple, station.firstChild);
+    const ring = document.createElementNS(svgNS, 'circle');
+    ring.setAttribute('cx', outerCircle.getAttribute('cx'));
+    ring.setAttribute('cy', outerCircle.getAttribute('cy'));
+    ring.setAttribute('r', outerCircle.getAttribute('r'));
+    ring.setAttribute('stroke', outerCircle.getAttribute('stroke') || '#B38645');
+    ring.setAttribute('class', 'traj-ring');
+    ring.style.animationDelay = `${((i * 0.5) % 3).toFixed(2)}s`;
+    station.insertBefore(ring, station.firstChild);
   });
 
-  /* ── Helpers ─────────────────────────────────────── */
-  // Return the two visible circles (skip transparent hit-area at index 0)
-  function getVisibleCircles(station) {
-    const circles = station.querySelectorAll('circle');
-    return circles.length >= 3
-      ? { outer: circles[1], inner: circles[2] }
-      : { outer: circles[0], inner: circles[1] };
+  /* ── Helper: outermost visible circle ──────────── */
+  function getMainCircle(station) {
+    const circles = station.querySelectorAll('circle:not(.traj-ring)');
+    // For expandable: [hit-area, outer-border, inner-dot] → index 1
+    // For simple: [outer-border, inner-dot] → index 0
+    return circles.length >= 2 ? circles[1] : circles[0];
   }
 
-  // Position the floating card near the station's screen location
-  function positionPanel(filter) {
-    const stationEl = document.querySelector(`.metro-station[data-filter="${filter}"]`);
+  /* ── Position panel near clicked station ──────── */
+  function positionPanel(id) {
+    const stationEl = document.querySelector(`.traj-station[data-id="${id}"]`);
     if (!stationEl) return;
-
-    const { outer } = getVisibleCircles(stationEl);
-    const circleRect = outer.getBoundingClientRect();
-
-    const CARD_W = 308;
-    const CARD_H = panel.offsetHeight || 280;
+    const circle = getMainCircle(stationEl);
+    if (!circle) return;
+    const rect = circle.getBoundingClientRect();
+    const CARD_W = 400;
+    const CARD_H = panel.offsetHeight || 300;
     const MARGIN = 12;
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    // Try right → left → below
-    let left = circleRect.right + MARGIN;
-    let top = circleRect.top - 40;
+    let left = rect.right + MARGIN;
+    let top = rect.top - 40;
 
-    if (left + CARD_W > vw - MARGIN) {
-      left = circleRect.left - CARD_W - MARGIN;
-    }
+    if (left + CARD_W > vw - MARGIN) left = rect.left - CARD_W - MARGIN;
     if (left < MARGIN) left = MARGIN;
     if (top + CARD_H > vh - MARGIN) top = vh - CARD_H - MARGIN;
     if (top < MARGIN) top = MARGIN;
@@ -497,137 +319,74 @@ function initMetroMap() {
     panel.style.top = `${top}px`;
   }
 
-  /* ── Hover animation ─────────────────────────────── */
-  stations.forEach(station => {
-    const { outer, inner } = getVisibleCircles(station);
-    station.addEventListener('mouseenter', () => {
-      if (station.classList.contains('active')) return;
-      gsap.to(outer, { attr: { r: 14 }, duration: 0.18, ease: 'back.out(2)' });
-      gsap.to(inner, { attr: { r: 6 }, duration: 0.18 });
-    });
-    station.addEventListener('mouseleave', () => {
-      if (!station.classList.contains('active')) {
-        gsap.to(outer, { attr: { r: 10 }, duration: 0.18 });
-        gsap.to(inner, { attr: { r: 4 }, duration: 0.18 });
-      }
-    });
-  });
-
-  /* ── Open station card ───────────────────────────── */
-  function openStation(filter) {
-    const data = METRO_CONTENT[filter];
-    if (!data) { console.warn('[Metro] No data for:', filter); return; }
+  /* ── Open station card ────────────────────────── */
+  function openStation(id) {
+    const data = METRO_CONTENT[id];
+    if (!data) { console.warn('[Traj] No data for:', id); return; }
 
     const color = LINE_COLORS[data.line] || '#B38645';
     const lineName = getLineNames()[data.line] || '';
 
-    // Build connection chips HTML
-    const connHTML = (data.connections || []).length > 0
-      ? `<div class="metro-connections">
-           <p class="metro-connections-label">Conexiones temporales</p>
-           <div class="metro-connections-list">
-             ${(data.connections || []).map(id => {
-        const c = METRO_CONTENT[id];
-        if (!c) return '';
-        const cColor = LINE_COLORS[c.line] || '#aaa';
-        const cLine = getLineNames()[c.line] || '';
-        return `<button class="metro-conn-chip" data-goto="${id}">
-                         <span class="metro-conn-dot" style="background:${cColor}"></span>
-                         <span><strong>${cLine}</strong> · ${getMetroTitle(id)}</span>
-                       </button>`;
-      }).join('')}
-           </div>
-         </div>`
-      : '';
-
     panelBody.innerHTML = `
       <span class="metro-panel-tag" style="background:${color}">${lineName}</span>
       <p class="metro-panel-year">${data.year}</p>
-      <h4 class="metro-panel-title">${getMetroTitle(filter)}</h4>
-      <p class="metro-panel-institution">${getMetroInstitution(filter)}</p>
+      <h4 class="metro-panel-title">${getMetroTitle(id)}</h4>
+      <p class="metro-panel-institution">${getMetroInstitution(id)}</p>
       <ul class="metro-panel-list">
-        ${getMetroItems(filter).map(i => `<li>${i}</li>`).join('')}
+        ${getMetroItems(id).map(item => `<li>${item}</li>`).join('')}
       </ul>
-      ${connHTML}
     `;
 
-    // Apply border color
     panel.style.borderLeftColor = color;
 
-    // Reset all stations visually
-    stations.forEach(s => {
-      s.classList.remove('active');
-      const { outer: oc, inner: ic } = getVisibleCircles(s);
-      gsap.to(oc, { attr: { r: 10 }, duration: 0.15 });
-      gsap.to(ic, { attr: { r: 4 }, duration: 0.15 });
-    });
+    // Reset all stations
+    stations.forEach(s => s.classList.remove('active'));
 
-    // Pulse clicked station
-    const activeStation = document.querySelector(`.metro-station[data-filter="${filter}"]`);
-    if (activeStation) {
-      activeStation.classList.add('active');
-      const { outer: oc, inner: ic } = getVisibleCircles(activeStation);
-      gsap.timeline()
-        .to(oc, { attr: { r: 16 }, duration: 0.15, ease: 'power2.out' })
-        .to(oc, { attr: { r: 13 }, duration: 0.22, ease: 'elastic.out(1,0.5)' });
-      gsap.to(ic, { attr: { r: 5.5 }, duration: 0.25 });
-    }
+    // Activate clicked station
+    const activeStation = document.querySelector(`.traj-station[data-id="${id}"]`);
+    activeStation?.classList.add('active');
 
-    // Show panel first (needed for offsetHeight)
     panel.classList.add('open');
     panel.setAttribute('aria-hidden', 'false');
 
-    // Position AFTER it's visible (so offsetHeight is correct)
-    requestAnimationFrame(() => positionPanel(filter));
-
-    // Wire connection chip clicks
-    panel.querySelectorAll('.metro-conn-chip').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openStation(btn.dataset.goto);
-      });
-    });
+    requestAnimationFrame(() => positionPanel(id));
   }
 
-  /* ── Close ───────────────────────────────────────── */
+  /* ── Close panel ──────────────────────────────── */
   function closePanel() {
     panel.classList.remove('open');
     panel.setAttribute('aria-hidden', 'true');
-    stations.forEach(s => {
-      s.classList.remove('active');
-      const { outer: oc, inner: ic } = getVisibleCircles(s);
-      gsap.to(oc, { attr: { r: 10 }, duration: 0.15 });
-      gsap.to(ic, { attr: { r: 4 }, duration: 0.15 });
-    });
+    stations.forEach(s => s.classList.remove('active'));
   }
 
-  /* ── Event listeners ─────────────────────────────── */
+  /* ── Event listeners ─────────────────────────── */
   stations.forEach(station => {
-    station.addEventListener('click', (e) => {
+    station.addEventListener('click', e => {
       e.stopPropagation();
-      openStation(station.getAttribute('data-filter'));
+      const id = station.getAttribute('data-id');
+      if (panel.classList.contains('open') &&
+          document.querySelector(`.traj-station.active[data-id="${id}"]`)) {
+        closePanel();
+      } else {
+        openStation(id);
+      }
     });
-    station.addEventListener('keydown', (e) => {
+    station.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openStation(station.getAttribute('data-filter'));
+        openStation(station.getAttribute('data-id'));
       }
     });
   });
 
-  panelClose?.addEventListener('click', (e) => { e.stopPropagation(); closePanel(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
-  document.addEventListener('click', (e) => {
-    if (panel.classList.contains('open') && !panel.contains(e.target)) {
-      closePanel();
-    }
+  panelClose?.addEventListener('click', e => { e.stopPropagation(); closePanel(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+  document.addEventListener('click', e => {
+    if (panel.classList.contains('open') && !panel.contains(e.target)) closePanel();
   });
-  // Reposition on resize
   window.addEventListener('resize', () => {
-    const active = document.querySelector('.metro-station.active');
-    if (active && panel.classList.contains('open')) {
-      positionPanel(active.getAttribute('data-filter'));
-    }
+    const active = document.querySelector('.traj-station.active');
+    if (active && panel.classList.contains('open')) positionPanel(active.getAttribute('data-id'));
   });
 }
 
@@ -685,23 +444,25 @@ function initSmoothScroll() {
 }
 
 /* ==============================
-   METRO MAP — Mobile Accordion
+   TRAYECTORIA MAP — Mobile Accordion
    ============================== */
 function initMetroMobile() {
   const container = document.getElementById('metro-mobile');
   if (!container) return;
 
+  // Define line order for mobile display
+  const lineOrder = ['inicio', 'formacion', 'clinica', 'metabolismo', 'comunicacion', 'final'];
+
   // Group stations by line
   const linesMap = {};
-  Object.keys(LINE_NAMES_ES).forEach(lineKey => {
+  lineOrder.forEach(lineKey => {
     linesMap[lineKey] = {
-      name: LINE_NAMES_ES[lineKey],
+      name: getLineNames()[lineKey] || lineKey,
       color: LINE_COLORS[lineKey],
-      stations: []
+      stations: [],
     };
   });
 
-  // Populate stations into lines
   Object.entries(METRO_CONTENT).forEach(([id, data]) => {
     if (linesMap[data.line]) {
       linesMap[data.line].stations.push({ id, ...data });
@@ -710,18 +471,18 @@ function initMetroMobile() {
 
   // Build HTML
   let html = '';
-  Object.keys(linesMap).forEach(lineKey => {
+  lineOrder.forEach(lineKey => {
     const line = linesMap[lineKey];
-    if (line.stations.length === 0) return;
+    if (!line || line.stations.length === 0) return;
 
     html += `
       <div class="mm-line" data-line="${lineKey}">
-        <button class="mm-line-header" aria-expanded="false">
+        <button class="mm-line-header" aria-expanded="false" style="--line-color:${line.color}">
           <div class="mm-line-dot" style="background:${line.color}"></div>
-          <div class="mm-line-name">${getLineNames()[lineKey]}</div>
+          <div class="mm-line-name">${line.name}</div>
           <div class="mm-chevron">▼</div>
         </button>
-        <div class="mm-stations" style="--line-color: ${line.color}">
+        <div class="mm-stations" style="--line-color:${line.color}">
     `;
 
     line.stations.forEach(st => {
@@ -730,35 +491,27 @@ function initMetroMobile() {
             <div class="mm-station-pip" style="border-color:${line.color}"></div>
             <div class="mm-station-info">
               <div class="mm-station-name">${getMetroTitle(st.id)}</div>
-              <div class="mm-station-year">${st.year}</div>
+              <div class="mm-station-year" style="color:${line.color}">${st.year}</div>
             </div>
             <div class="mm-station-arrow">›</div>
           </button>
       `;
     });
 
-    html += `
-        </div>
-      </div>
-    `;
+    html += `</div></div>`;
   });
 
   container.innerHTML = html;
 
-  // Accordion Logic
-  const lineHeaders = container.querySelectorAll('.mm-line-header');
-  lineHeaders.forEach(header => {
+  // Accordion toggle
+  container.querySelectorAll('.mm-line-header').forEach(header => {
     header.addEventListener('click', () => {
       const parentLine = header.parentElement;
       const isOpen = parentLine.classList.contains('open');
-
-      // Close all
       container.querySelectorAll('.mm-line').forEach(l => {
         l.classList.remove('open');
         l.querySelector('.mm-line-header').setAttribute('aria-expanded', 'false');
       });
-
-      // Toggle clicked
       if (!isOpen) {
         parentLine.classList.add('open');
         header.setAttribute('aria-expanded', 'true');
@@ -766,53 +519,26 @@ function initMetroMobile() {
     });
   });
 
-  // Station Tap Logic
+  // Station tap — opens bottom-sheet panel
   const panel = document.getElementById('metro-panel');
   const panelBody = panel?.querySelector('.metro-panel-body');
-  const stationBtns = container.querySelectorAll('.mm-station-btn');
 
-  stationBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent document click from closing it immediately
+  container.querySelectorAll('.mm-station-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
       const id = btn.getAttribute('data-station');
       const data = METRO_CONTENT[id];
       if (!data || !panel || !panelBody) return;
 
-      // Build content (reusing same logic as desktop)
-      let connectionsHtml = '';
-
-      if (data.connections && data.connections.length > 0) {
-        connectionsHtml = data.connections
-          .map((connId) => {
-            const connData = METRO_CONTENT[connId];
-            if (!connData) return '';
-            const cColor = LINE_COLORS[connData.line];
-            return `
-              <button class="metro-conn-chip" data-goto="${connId}">
-                <span class="metro-conn-dot" style="background:${cColor}"></span>
-                ${getMetroTitle(connId)}
-              </button>
-            `;
-          })
-          .join('');
-      }
-
-      const connsTitle = currentLang === 'en' ? 'Key Interconnections' : 'Interconexiones Clave';
-
+      const color = LINE_COLORS[data.line] || '#B38645';
       panelBody.innerHTML = `
-        <div class="metro-panel-header">
-          <span class="metro-panel-year" style="color:${LINE_COLORS[data.line]}">${data.year}</span>
-          <span class="metro-panel-inst">${getMetroInstitution(id)}</span>
-        </div>
+        <span class="metro-panel-tag" style="background:${color}">${getLineNames()[data.line] || ''}</span>
+        <p class="metro-panel-year">${data.year}</p>
         <h3 class="metro-panel-title">${getMetroTitle(id)}</h3>
+        <p class="metro-panel-institution">${getMetroInstitution(id)}</p>
         <ul class="metro-panel-list">${getMetroItems(id).map(i => `<li>${i}</li>`).join('')}</ul>
-        ${connectionsHtml ? `<div class="metro-panel-conns-title">${connsTitle}</div><div class="metro-panel-conns">${connectionsHtml}</div>` : ''}
       `;
-
-      // Apply border color just like desktop
-      panel.style.borderLeftColor = LINE_COLORS[data.line] || '#B38645';
-
-      // Show panel as bottom sheet (desktop CSS handles float, mobile CSS handles sheet)
+      panel.style.borderLeftColor = color;
       panel.classList.add('open');
       panel.setAttribute('aria-hidden', 'false');
     });

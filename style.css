@@ -465,7 +465,7 @@ body.panel-open {
 .section-sub {
   text-align: center;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 780px;
   margin: 0 auto 40px;
   font-size: 0.95rem;
   font-weight: 500;
@@ -646,182 +646,142 @@ body.panel-open {
   line-height: 1.5;
 }
 
-/* ---- MAPA METRO / TRAYECTORIA ---- */
+/* ═══════════════════════════════════════════════════
+   TRAYECTORIA — Mapa de Estaciones
+   ═══════════════════════════════════════════════════ */
 .mapa-section {
   background: var(--bg-page);
 }
 
-/* Legend */
-.metro-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  justify-content: center;
-  margin-bottom: 32px;
+.section-sub--hint {
+  font-size: 0.82rem;
+  opacity: 0.6;
+  margin-top: -32px;
 }
 
-.metro-legend-item {
+/* Container más ancho solo en la sección del mapa */
+.mapa-section .section-container {
+  max-width: 1500px;
+  padding: 0 24px;
+}
+
+/* ── Leyenda ────────────────────────────────────────── */
+.traj-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* keep old class as alias for mobile JS that may still reference it */
+.metro-legend { display: none; }
+
+.traj-legend-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
   text-transform: uppercase;
 }
 
-.metro-legend-dot {
-  width: 12px;
-  height: 12px;
+.traj-legend-dot {
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-/* Map wrapper */
-.metro-map-wrapper {
+/* ── Map wrapper ────────────────────────────────────── */
+.traj-map-wrapper {
   position: relative;
   width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
+  overflow: visible;
+  padding: 24px 20px 16px;
+  box-sizing: border-box;
 }
 
-/* SVG */
-.metro-svg {
+.traj-map-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.traj-map-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.traj-map-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(179,134,69,0.3);
+  border-radius: 2px;
+}
+
+/* keep old wrappers hidden */
+.metro-map-wrapper { display: none; }
+
+/* ── SVG ────────────────────────────────────────────── */
+.traj-svg {
   width: 100%;
   height: auto;
   display: block;
   overflow: visible;
 }
 
-.metro-label {
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  fill: var(--text-secondary);
+/* ── Animations ─────────────────────────────────────── */
+@keyframes traj-pulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.06); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-.metro-label-year {
-  font-family: 'Manrope', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+@keyframes traj-ring-ping {
+  0%   { transform: scale(1); opacity: 0.6; }
+  80%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
 }
 
-/* ── Override ALL inline SVG text sizes to be legible ── */
-/* Station name (primary label) — was 8.5px */
-.metro-svg text[font-size="8.5"] {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-}
-
-/* Sub-label (year / institution) — was 7.5px */
-.metro-svg text[font-size="7.5"] {
-  font-size: 11.5px !important;
-  font-weight: 500 !important;
-}
-
-/* Tiny year connectors — keep small but bump visible */
-.metro-svg text[font-size="7"] {
-  font-size: 10px !important;
-}
-
-/* ── Station heartbeat — muy lento y suave ─────────── */
-@keyframes metro-heartbeat {
-  0% {
-    transform: scale(1);
-  }
-
-  15% {
-    transform: scale(1.08);
-  }
-
-  30% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* ── Ripple ring — sonar ping outward ─────────────── */
-@keyframes metro-ring-ping {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-
-  80% {
-    transform: scale(2.8);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(2.8);
-    opacity: 0;
-  }
-}
-
-.metro-ripple {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: metro-ring-ping 3s ease-out infinite;
-  fill: none;
-  stroke-width: 2.5;
-  pointer-events: none;
-}
-
-/* Station hover — needs transform-box for SVG */
-.metro-station {
+/* ── Stations ───────────────────────────────────────── */
+.traj-station {
   cursor: pointer;
   transform-box: fill-box;
   transform-origin: center;
   transition: transform 0.15s ease, filter 0.15s ease;
-  animation: metro-heartbeat 6s ease-in-out infinite;
 }
 
-/* Stagger delays so not all stations beat at once */
-.metro-station:nth-child(2n) {
-  animation-delay: -0.6s;
-}
-
-.metro-station:nth-child(3n) {
-  animation-delay: -1.2s;
-}
-
-.metro-station:nth-child(4n) {
-  animation-delay: -1.8s;
-}
-
-.metro-station:nth-child(5n) {
-  animation-delay: -0.3s;
-}
-
-.metro-station:nth-child(7n) {
-  animation-delay: -1.5s;
-}
-
-.metro-station:hover,
-.metro-station:focus {
-  transform: scale(1.65);
-  filter: drop-shadow(0 0 8px rgba(179, 134, 69, 0.7));
-  animation: none;
-  /* stop idle pulse while hovering */
+.traj-station:hover,
+.traj-station:focus {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 7px rgba(0,0,0,0.25));
   outline: none;
 }
 
-.metro-station.active {
-  transform: scale(1.45);
-  filter: drop-shadow(0 0 10px rgba(179, 134, 69, 0.9));
-  animation: none;
+.traj-station.active {
+  transform: scale(1.35);
+  filter: drop-shadow(0 0 10px rgba(179, 134, 69, 0.8));
 }
 
-/* Line highlight on active */
-.metro-line {
-  transition: opacity 0.25s ease, stroke-width 0.25s ease;
+/* Expandable stations get a subtle ring pulse */
+.traj-expandable .traj-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: traj-ring-ping 3s ease-out infinite;
+  fill: none;
+  stroke-width: 2;
+  pointer-events: none;
 }
+
+.traj-expandable:nth-child(3n) .traj-ring { animation-delay: -1s; }
+.traj-expandable:nth-child(5n) .traj-ring { animation-delay: -2s; }
+
+/* ── Lines ──────────────────────────────────────────── */
+.traj-line {
+  transition: opacity 0.25s ease;
+}
+
+/* Keep old .metro-station/.metro-line for any residual references */
+.metro-station, .metro-line { display: none; }
 
 /* ── Floating station tooltip card ───────────────────── */
 .metro-tooltip {
@@ -887,7 +847,7 @@ body.panel-open {
 }
 
 .metro-connections-label {
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -907,7 +867,7 @@ body.panel-open {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.72rem;
   color: var(--text-secondary);
   background: rgba(0, 0, 0, 0.03);
@@ -934,7 +894,7 @@ body.panel-open {
 /* ── Panel content typography (shared between tooltip and any panel) ── */
 .metro-panel-tag {
   display: inline-block;
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -946,7 +906,7 @@ body.panel-open {
 }
 
 .metro-panel-year {
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.75rem;
   color: var(--text-tertiary);
   margin-bottom: 4px;
@@ -963,9 +923,9 @@ body.panel-open {
 }
 
 .metro-panel-institution {
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 0.78rem;
-  color: var(--gold-deep);
+  color: var(--gold);
   font-weight: 600;
   margin-bottom: 12px;
   font-style: italic;
@@ -975,9 +935,9 @@ body.panel-open {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .metro-panel-list li {
@@ -996,294 +956,7 @@ body.panel-open {
   font-weight: 700;
 }
 
-.radial-map {
-  position: relative;
-  width: min(600px, 92vw);
-  height: min(600px, 92vw);
-  max-width: 600px;
-  max-height: 600px;
-  margin: 0 auto;
-}
-
-.radial-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.radial-line {
-  stroke: rgba(201, 169, 98, 0.25);
-  stroke-width: 1.5;
-  transition: stroke 0.3s;
-}
-
-.radial-map:has(.radial-station.active) .radial-line[data-station] {
-  stroke: rgba(201, 169, 98, 0.15);
-}
-
-.radial-map:has(.radial-station.active) .radial-line[data-station].active-line {
-  stroke: rgba(201, 169, 98, 0.6);
-}
-
-.radial-hub,
-.radial-hub-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 165px;
-  height: 165px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 2px solid var(--gold);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  gap: 6px;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.radial-hub-btn {
-  cursor: pointer;
-  font-family: var(--font);
-  transition: all 0.25s;
-}
-
-.radial-hub-btn:hover {
-  border-color: rgba(201, 169, 98, 0.9);
-  box-shadow: 0 0 0 4px rgba(201, 169, 98, 0.15);
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.radial-hub-btn.active {
-  box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.4);
-}
-
-.hub-name {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-align: center;
-  line-height: 1.2;
-}
-
-.hub-prof {
-  font-size: 0.7rem;
-  color: var(--gold);
-  text-align: center;
-}
-
-/* Posiciones radiales: centro 50%, radio ~38% */
-.radial-station {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 20px;
-  background: var(--bg-card);
-  border: 2px solid var(--border);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.25s;
-  z-index: 3;
-  font-family: var(--font);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  min-width: 120px;
-}
-
-.radial-station:hover {
-  transform: translate(-50%, -50%) scale(1.08);
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px rgba(201, 169, 98, 0.2);
-}
-
-.radial-station.active {
-  box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.3);
-}
-
-.radial-station-gold.active {
-  border-color: var(--gold);
-}
-
-.radial-station-green.active {
-  border-color: var(--success);
-  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
-}
-
-.radial-station-blue.active {
-  border-color: var(--info);
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
-}
-
-.radial-station-outline.active {
-  border-color: var(--gold);
-}
-
-/* 7 estaciones: top, top-right, right, bottom-right, bottom, bottom-left, left */
-.radial-station[data-station="0"] {
-  top: 5%;
-  left: 50%;
-}
-
-.radial-station[data-station="1"] {
-  top: 20%;
-  left: 78%;
-}
-
-.radial-station[data-station="2"] {
-  top: 50%;
-  left: 95%;
-}
-
-.radial-station[data-station="3"] {
-  top: 80%;
-  left: 78%;
-}
-
-.radial-station[data-station="4"] {
-  top: 95%;
-  left: 50%;
-}
-
-.radial-station[data-station="5"] {
-  top: 80%;
-  left: 22%;
-}
-
-.radial-station[data-station="6"] {
-  top: 50%;
-  left: 5%;
-}
-
-.radial-station-gold {
-  border-color: rgba(201, 169, 98, 0.5);
-}
-
-.radial-station-gold:hover,
-.radial-station-gold.active {
-  border-color: var(--gold);
-}
-
-.radial-station-green {
-  border-color: rgba(74, 222, 128, 0.5);
-}
-
-.radial-station-green:hover,
-.radial-station-green.active {
-  border-color: var(--success);
-}
-
-.radial-station-blue {
-  border-color: rgba(96, 165, 250, 0.5);
-}
-
-.radial-station-blue:hover,
-.radial-station-blue.active {
-  border-color: var(--info);
-}
-
-.radial-station-outline {
-  border-style: dashed;
-}
-
-.radial-panel-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s, visibility 0.25s;
-  pointer-events: none;
-}
-
-.radial-panel-overlay.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.radial-panel-inner {
-  position: relative;
-  width: 85%;
-  max-width: 380px;
-  max-height: 75%;
-  overflow-y: auto;
-  background: var(--bg-card);
-  border: 1px solid var(--gold);
-  border-radius: 12px;
-  padding: 24px 24px 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-.radial-panel-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
-
-.radial-panel-close:hover {
-  opacity: 1;
-}
-
-.radial-panel-body {
-  padding-right: 8px;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-.radial-panel-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 14px;
-  padding-right: 28px;
-}
-
-.radial-panel-list {
-  list-style: none;
-  margin-top: 8px;
-}
-
-.radial-panel-list li {
-  padding: 6px 0;
-  padding-left: 20px;
-  position: relative;
-  color: var(--text-secondary);
-}
-
-.radial-panel-list li::before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-}
+/* (radial-map removed — replaced by traj-map) */
 
 /* ---- FORMACIÓN ---- */
 .formacion-grid {
@@ -1501,30 +1174,6 @@ body.panel-open {
     margin: 0 auto;
   }
 
-  .radial-map {
-    width: min(420px, 92vw);
-    height: min(420px, 92vw);
-  }
-
-  .radial-hub,
-  .radial-hub-btn {
-    width: 140px;
-    height: 140px;
-  }
-
-  .hub-name {
-    font-size: 0.75rem;
-  }
-
-  .hub-prof {
-    font-size: 0.65rem;
-  }
-
-  .radial-station {
-    min-width: 100px;
-    padding: 12px 16px;
-    font-size: 0.75rem;
-  }
 }
 
 /* Tablet y móvil medio */
@@ -1538,10 +1187,6 @@ body.panel-open {
     height: 64px;
   }
 
-  .radial-map {
-    width: min(380px, 94vw);
-    height: min(380px, 94vw);
-  }
 }
 
 /* Mapa refactorizado para móvil: lista vertical tipo metro */
@@ -1659,126 +1304,13 @@ body.panel-open {
     margin-top: -12px;
   }
 
-  /* Mapa: lista vertical en móvil, desplegables por scroll */
-  .radial-map {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-width: 100%;
-    gap: 0;
-    padding: 0;
+  /* Mapa en móvil: ocultar SVG, mostrar acordeón */
+  .traj-map-wrapper {
+    display: none !important;
   }
 
-  .map-station-block {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-    overflow-anchor: none;
-  }
-
-  .map-station-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease-out;
-    background: rgba(0, 0, 0, 0.25);
-    overflow-anchor: none;
-  }
-
-  .map-station-content .radial-panel-title {
-    display: none;
-  }
-
-  .map-station-content .radial-panel-list {
-    margin-top: 4px;
-  }
-
-  .map-station-block.expanded .map-station-content {
-    max-height: 800px;
-    padding: 12px 20px 20px;
-  }
-
-  .radial-lines {
-    display: none;
-  }
-
-  .radial-hub,
-  .radial-hub-btn {
-    position: static;
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    transform: none;
-    border-radius: 12px;
-    padding: 20px;
-    order: -1;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .radial-hub-btn:hover {
-    transform: none;
-  }
-
-  .hub-name {
-    font-size: 1rem;
-    text-align: left;
-  }
-
-  .hub-prof {
-    font-size: 0.85rem;
-    text-align: left;
-  }
-
-  .radial-station {
-    position: static;
-    width: 100%;
-    min-width: unset;
-    transform: none;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 16px 20px;
-    order: 0;
-  }
-
-  .radial-station[data-station="0"],
-  .radial-station[data-station="1"],
-  .radial-station[data-station="2"],
-  .radial-station[data-station="3"],
-  .radial-station[data-station="4"],
-  .radial-station[data-station="5"],
-  .radial-station[data-station="6"] {
-    top: auto;
-    left: auto;
-    min-height: 44px;
-  }
-
-  .radial-station:hover {
-    transform: none;
-  }
-
-  .radial-panel-overlay {
-    display: none;
-    inset: 0;
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .radial-panel-inner {
-    width: 100%;
-    max-width: 100%;
-    max-height: 75vh;
-    border-radius: 16px 16px 0 0;
-    padding: 24px 20px max(32px, env(safe-area-inset-bottom));
-  }
-
-  .radial-panel-close {
-    width: 44px;
-    height: 44px;
-    font-size: 1.75rem;
+  .traj-legend {
+    display: none !important;
   }
 
   .about-grid {
@@ -2008,7 +1540,7 @@ body.panel-open {
    MOBILE METRO ACCORDION  (≤ 768 px)
    ═══════════════════════════════════════════════════ */
 
-/* Default: hide accordion, show SVG */
+/* Default: hide accordion, show SVG map */
 #metro-mobile {
   display: none;
 }
@@ -2016,11 +1548,11 @@ body.panel-open {
 @media (max-width: 768px) {
 
   /* Hide SVG map + legend on mobile */
-  .metro-map-wrapper {
+  .traj-map-wrapper {
     display: none !important;
   }
 
-  .metro-legend {
+  .traj-legend {
     display: none !important;
   }
 

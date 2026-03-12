@@ -293,441 +293,203 @@
     </div>
   </section>
 
-  <!-- ====== TRAYECTORIA = Metro Map ====== -->
+    <!-- ====== TRAYECTORIA = Mapa de Estaciones ====== -->
   <section id="trayectoria" class="section-luxury mapa-section">
     <div class="section-container">
       <h2 class="section-title-luxury">
         <span class="title-accent" data-i18n="tray.accent">Trayectoria</span>
         <span data-i18n="tray.title">Mapa de experiencia profesional</span>
       </h2>
-      <p class="section-sub" data-i18n="tray.sub">Haz clic en cualquier estación para explorar cada etapa del recorrido.
-      </p>
+      <p class="section-sub" data-i18n="tray.sub">Representación visual de la evolución profesional hacia medicina preventiva y longevidad.</p>
+      <p class="section-sub section-sub--hint" data-i18n="tray.hint">Haz clic en las estaciones marcadas para explorar cada etapa.</p>
 
-      <!-- Metro legend -->
-      <div class="metro-legend">
-        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#B38645"></span><span
-            data-i18n="legend.formacion">Formación
-            académica</span></div>
-        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#2D8B7A"></span><span
-            data-i18n="legend.clinica">Experiencia
-            clínica</span></div>
-        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#4A7BB7"></span><span
-            data-i18n="legend.nutricion">Nutrición
-            clínica</span></div>
-        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#C07640"></span><span
-            data-i18n="legend.competencias">Competencias
-          </span></div>
-        <div class="metro-legend-item"><span class="metro-legend-dot" style="background:#7B5EA7"></span><span
-            data-i18n="legend.divulgacion">Divulgación
-          </span></div>
+      <!-- Legend -->
+      <div class="traj-legend">
+        <div class="traj-legend-item"><span class="traj-legend-dot" style="background:#1B4F8A"></span><span data-i18n="legend.formacion">Formación</span></div>
+        <div class="traj-legend-item"><span class="traj-legend-dot" style="background:#2D8B5E"></span><span data-i18n="legend.clinica">Experiencia clínica</span></div>
+        <div class="traj-legend-item"><span class="traj-legend-dot" style="background:#D4772C"></span><span data-i18n="legend.metabolismo">Metabolismo</span></div>
+        <div class="traj-legend-item"><span class="traj-legend-dot" style="background:#7B5EA7"></span><span data-i18n="legend.comunicacion">Comunicación</span></div>
       </div>
 
-      <!-- Metro Map SVG — CRONOLÓGICO: cada columna X = un período de tiempo -->
-      <div class="metro-map-wrapper">
-        <svg class="metro-svg" viewBox="0 0 1150 530" preserveAspectRatio="xMidYMid meet">
-          <!--
-            CRONOLOGÍA visual:
-            x=70  2013  |  x=200 2015  |  x=320 2017
-            x=450 2018  |  x=570 2020  |  x=690 2022
-            x=810 2023  |  x=905 acum  |  x=1050 HUB
-          -->
+      <!-- Desktop trajectory map -->
+      <div class="traj-map-wrapper">
+        <svg class="traj-svg" viewBox="-30 -20 1320 560" preserveAspectRatio="xMidYMid meet" overflow="visible">
+          <defs>
+            <filter id="traj-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
 
-          <!-- === LÍNEAS HORIZONTALES === -->
-          <polyline class="metro-line" points="35,75 810,75 1050,275" stroke="#B38645" fill="none" stroke-width="5"
-            stroke-linecap="round" stroke-linejoin="round" />
-          <polyline class="metro-line" points="35,175 920,175 1050,268" stroke="#2D8B7A" fill="none" stroke-width="5"
-            stroke-linecap="round" stroke-linejoin="round" />
-          <polyline class="metro-line" points="35,275 1050,275" stroke="#4A7BB7" fill="none" stroke-width="5"
-            stroke-linecap="round" stroke-linejoin="round" />
-          <polyline class="metro-line" points="35,375 840,375 1050,282" stroke="#C07640" fill="none" stroke-width="5"
-            stroke-linecap="round" stroke-linejoin="round" />
-          <polyline class="metro-line" points="35,455 840,455 1050,290" stroke="#7B5EA7" fill="none" stroke-width="5"
-            stroke-linecap="round" stroke-linejoin="round" />
+          <!-- LINES: Divergence Start → Tracks -->
+          <path class="traj-line" d="M 55,260 C 105,260 135,90 170,90" stroke="#1B4F8A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 55,260 C 105,260 135,210 170,210" stroke="#2D8B5E" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 55,260 C 105,260 135,330 170,330" stroke="#D4772C" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 55,260 C 105,260 135,430 170,430" stroke="#7B5EA7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
 
-          <!-- === INTERCONEXIONES CRONOLÓGICAS (dashes verticales) === -->
-          <!-- 2013: ADEMA(L1) ↕ NutrBase(L3) -->
-          <line x1="70" y1="85" x2="70" y2="265" stroke="#B38645" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.4" />
+          <!-- LINES: Horizontal Tracks -->
+          <line class="traj-line" x1="170" y1="90" x2="960" y2="90" stroke="#1B4F8A" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+          <line class="traj-line" x1="170" y1="210" x2="960" y2="210" stroke="#2D8B5E" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+          <line class="traj-line" x1="170" y1="330" x2="960" y2="330" stroke="#D4772C" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+          <line class="traj-line" x1="170" y1="430" x2="960" y2="430" stroke="#7B5EA7" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
 
-          <!-- 2015: Ysonut(L3) ↕ Form.prof(L5) -->
-          <line x1="200" y1="285" x2="200" y2="445" stroke="#7B5EA7" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.4" />
+          <!-- LINES: Convergence Tracks → End -->
+          <path class="traj-line" d="M 960,90 C 1020,90 1075,260 1130,260" stroke="#1B4F8A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 960,210 C 1020,210 1075,260 1130,260" stroke="#2D8B5E" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 960,330 C 1020,330 1075,260 1130,260" stroke="#D4772C" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path class="traj-line" d="M 960,430 C 1020,430 1075,260 1130,260" stroke="#7B5EA7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
 
-          <!-- 2017-19: UIB(L1,320) ↕ Enf.Mallorca(L2,320) ↕ Workshops(L5,320) -->
-          <line x1="320" y1="85" x2="320" y2="165" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-          <line x1="320" y1="185" x2="320" y2="445" stroke="#888" stroke-width="1.2" stroke-dasharray="4 4"
-            opacity="0.3" />
+          <!-- TRACK LABELS (below each line) -->
+          <text x="185" y="105" font-family="Manrope,sans-serif" font-size="10" font-weight="700" fill="#1B4F8A" letter-spacing="0.1em" opacity="0.6" data-i18n-svg="traj.label.formacion">FORMACIÓN</text>
+          <text x="185" y="225" font-family="Manrope,sans-serif" font-size="10" font-weight="700" fill="#2D8B5E" letter-spacing="0.1em" opacity="0.6" data-i18n-svg="traj.label.clinica">CLÍNICA</text>
+          <text x="185" y="345" font-family="Manrope,sans-serif" font-size="10" font-weight="700" fill="#D4772C" letter-spacing="0.1em" opacity="0.6" data-i18n-svg="traj.label.metabolismo">METABOLISMO</text>
+          <text x="185" y="445" font-family="Manrope,sans-serif" font-size="10" font-weight="700" fill="#7B5EA7" letter-spacing="0.1em" opacity="0.6" data-i18n-svg="traj.label.comunicacion">COMUNICACIÓN</text>
 
-          <!-- Removed confusing long diagonal lines from Juaneda/Quirón -->
-
-          <!-- 2021-22: URV(L1,690) ↕ CAP Roses(L2,720) / Joan XXIII(L2,580) area ↕ EducPac(L5,690) -->
-          <line x1="690" y1="85" x2="650" y2="165" stroke="#B38645" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-          <line x1="690" y1="85" x2="720" y2="165" stroke="#B38645" stroke-width="1.2" stroke-dasharray="4 4"
-            opacity="0.3" />
-          <line x1="720" y1="385" x2="690" y2="448" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.38" />
-
-          <!-- 2023+: AMIR(L1,810) ↕ CAP Sitges(L2,840) ↕ EducNut(L3,810) ↕ Longevidad(L4,820) ↕ DivulgCient(L5,810) -->
-          <line x1="810" y1="85" x2="840" y2="165" stroke="#B38645" stroke-width="2" stroke-dasharray="5 3"
-            opacity="0.55" />
-          <line x1="840" y1="185" x2="810" y2="265" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-          <line x1="810" y1="285" x2="820" y2="370" stroke="#4A7BB7" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-          <line x1="820" y1="385" x2="810" y2="448" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-
-          <!-- === FORMACIÓN (Gold, y=75) === -->
-          <g class="metro-station" data-filter="adema" tabindex="0" role="button" aria-label="ADEMA 2013">
-            <circle cx="70" cy="75" r="18" fill="#B38645" fill-opacity="0.12" />
-            <circle cx="70" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
-            <circle cx="70" cy="75" r="4" fill="#B38645" />
+          <!-- ═══ START STATION (gray, small) ═══ -->
+          <g class="traj-station traj-expandable" data-id="start" tabindex="0" role="button" aria-label="Inicio">
+            <circle cx="55" cy="260" r="20" fill="#EDEAE6" stroke="#B0AAA4" stroke-width="2"/>
+            <circle cx="55" cy="260" r="6" fill="#B0AAA4"/>
           </g>
-          <text x="70" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">ADEMA</text>
-          <text x="70" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#B38645">2013</text>
+          <text x="55" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#5C5550" data-i18n-svg="traj.start">Inicio</text>
+          <text x="55" y="292" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#8A8580" data-i18n-svg="traj.start.sub1">trabajo con</text>
+          <text x="55" y="303" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#8A8580" data-i18n-svg="traj.start.sub2">personas</text>
 
-          <g class="metro-station" data-filter="uib" tabindex="0" role="button" aria-label="UIB Enfermería 2017">
-            <circle cx="320" cy="75" r="18" fill="#B38645" fill-opacity="0.12" />
-            <circle cx="320" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
-            <circle cx="320" cy="75" r="4" fill="#B38645" />
+          <!-- ═══ FORMACIÓN (y=90, #1B4F8A) — labels above ═══ -->
+          <!-- 1. Dietética — ADEMA (2013) — LARGE -->
+          <g class="traj-station traj-expandable" data-id="dietetica" tabindex="0" role="button" aria-label="Dietética ADEMA 2013">
+            <circle cx="310" cy="90" r="14" fill="#1B4F8A" fill-opacity="0.1"/>
+            <circle cx="310" cy="90" r="10" fill="white" stroke="#1B4F8A" stroke-width="3"/>
+            <circle cx="310" cy="90" r="4" fill="#1B4F8A"/>
           </g>
-          <text x="320" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">UIB Enferm.</text>
-          <text x="320" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#B38645">2017</text>
+          <text x="310" y="63" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" fill="#2A2420">Dietética</text>
+          <text x="310" y="49" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1B4F8A">2013 · ADEMA</text>
 
-          <g class="metro-station" data-filter="urv" tabindex="0" role="button" aria-label="URV Medicina 2022">
-            <circle cx="690" cy="75" r="18" fill="#B38645" fill-opacity="0.12" />
-            <circle cx="690" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
-            <circle cx="690" cy="75" r="4" fill="#B38645" />
+          <!-- 2. Enfermería — UIB (2017) — LARGE -->
+          <g class="traj-station traj-expandable" data-id="enfermeria" tabindex="0" role="button" aria-label="Enfermería UIB 2017">
+            <circle cx="490" cy="90" r="14" fill="#1B4F8A" fill-opacity="0.1"/>
+            <circle cx="490" cy="90" r="10" fill="white" stroke="#1B4F8A" stroke-width="3"/>
+            <circle cx="490" cy="90" r="4" fill="#1B4F8A"/>
           </g>
-          <text x="690" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">URV Medicina</text>
-          <text x="690" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#B38645">2022</text>
+          <text x="490" y="63" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" fill="#2A2420">Enfermería</text>
+          <text x="490" y="49" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1B4F8A">2017 · UIB</text>
 
-          <g class="metro-station" data-filter="amir" tabindex="0" role="button" aria-label="AMIR Máster 2023">
-            <circle cx="810" cy="75" r="18" fill="#B38645" fill-opacity="0.12" />
-            <circle cx="810" cy="75" r="10" fill="white" stroke="#B38645" stroke-width="4" />
-            <circle cx="810" cy="75" r="4" fill="#B38645" />
+          <!-- 3. Medicina — URV (2022) — LARGE -->
+          <g class="traj-station traj-expandable" data-id="medicina" tabindex="0" role="button" aria-label="Medicina URV 2022">
+            <circle cx="680" cy="90" r="14" fill="#1B4F8A" fill-opacity="0.1"/>
+            <circle cx="680" cy="90" r="10" fill="white" stroke="#1B4F8A" stroke-width="3"/>
+            <circle cx="680" cy="90" r="4" fill="#1B4F8A"/>
           </g>
-          <text x="810" y="30" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">AMIR Máster</text>
-          <text x="810" y="50" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#B38645">2023</text>
+          <text x="680" y="63" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" fill="#2A2420">Medicina</text>
+          <text x="680" y="49" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1B4F8A">2022 · URV</text>
 
-          <!-- === CLÍNICA (Teal, y=175) === -->
-          <!-- Enf. Mallorca — x=320 (2017-2019) -->
-          <g class="metro-station" data-filter="enf-mallorca" tabindex="0" role="button"
-            aria-label="Enfermería Mallorca 2017-2019">
-            <circle cx="320" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="320" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="320" cy="175" r="4" fill="#2D8B7A" />
+          <!-- 4. Máster Med. Estética — AMIR (2023) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="master" tabindex="0" role="button" aria-label="Máster Medicina Estética AMIR 2023">
+            <circle cx="860" cy="90" r="14" fill="#1B4F8A" fill-opacity="0.1"/>
+            <circle cx="860" cy="90" r="10" fill="white" stroke="#1B4F8A" stroke-width="3"/>
+            <circle cx="860" cy="90" r="4" fill="#1B4F8A"/>
+
           </g>
-          <text x="320" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="600"
-            fill="#3a3030">Juaneda · Quirón</text>
-          <text x="320" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12"
-            fill="#2D8B7A">2017–2019</text>
+          <text x="860" y="63" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">Máster M. Estética</text>
+          <text x="860" y="49" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1B4F8A">2023 · AMIR</text>
 
-          <!-- HUSE + Sant Joan de Reus — x=470 (2020) -->
-          <g class="metro-station" data-filter="enf-huse-reus" tabindex="0" role="button"
-            aria-label="Enfermería HUSE Reus 2020">
-            <circle cx="470" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="470" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="470" cy="175" r="4" fill="#2D8B7A" />
+          <!-- ═══ CLÍNICA (y=210, #2D8B5E) — labels below ═══ -->
+          <!-- 1. Enfermería hospitalaria (2017-2019) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="enf-hosp" tabindex="0" role="button" aria-label="Enfermería hospitalaria 2017-2019">
+            <circle cx="330" cy="210" r="14" fill="#2D8B5E" fill-opacity="0.1"/>
+            <circle cx="330" cy="210" r="10" fill="white" stroke="#2D8B5E" stroke-width="3"/>
+            <circle cx="330" cy="210" r="4" fill="#2D8B5E"/>
           </g>
-          <text x="470" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="600"
-            fill="#3a3030">HUSE · St.Joan</text>
-          <text x="470" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="#2D8B7A">2020
-            · COVID</text>
+          <text x="330" y="237" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">Enf. hospitalaria</text>
+          <text x="330" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#2D8B5E">2017–2019</text>
 
-          <!-- Joan XXIII — x=580 (2021) -->
-          <g class="metro-station" data-filter="joan-xxiii" tabindex="0" role="button"
-            aria-label="Joan XXIII Tarragona 2021">
-            <circle cx="580" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="580" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="580" cy="175" r="4" fill="#2D8B7A" />
+          <!-- 2. Pandemia COVID (2020) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="covid" tabindex="0" role="button" aria-label="Pandemia COVID 2020">
+            <circle cx="510" cy="210" r="14" fill="#2D8B5E" fill-opacity="0.1"/>
+            <circle cx="510" cy="210" r="10" fill="white" stroke="#2D8B5E" stroke-width="3"/>
+            <circle cx="510" cy="210" r="4" fill="#2D8B5E"/>
           </g>
-          <text x="580" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Joan XXIII</text>
-          <text x="580" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="#2D8B7A">2021
-            · Tarragona</text>
+          <text x="510" y="237" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">Pandemia COVID</text>
+          <text x="510" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#2D8B5E">2020</text>
 
-          <!-- CAP Ametlla de Mar — x=650 (2022) -->
-          <g class="metro-station" data-filter="cap-ametlla" tabindex="0" role="button"
-            aria-label="CAP Ametlla de Mar 2022">
-            <circle cx="650" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="650" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="650" cy="175" r="4" fill="#2D8B7A" />
+          <!-- 3. Hospital Joan XXIII (2021) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="joan-xxiii" tabindex="0" role="button" aria-label="Hospital Joan XXIII 2021">
+            <circle cx="670" cy="210" r="14" fill="#2D8B5E" fill-opacity="0.1"/>
+            <circle cx="670" cy="210" r="10" fill="white" stroke="#2D8B5E" stroke-width="3"/>
+            <circle cx="670" cy="210" r="4" fill="#2D8B5E"/>
           </g>
-          <text x="650" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Ametlla</text>
-          <text x="650" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#2D8B7A">07–10/2022</text>
+          <text x="670" y="237" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">Joan XXIII</text>
+          <text x="670" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#2D8B5E">2021</text>
 
-          <!-- CAP Roses — x=720 (2022-2023) -->
-          <g class="metro-station" data-filter="cap-roses" tabindex="0" role="button" aria-label="CAP Roses 2022-2023">
-            <circle cx="720" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="720" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="720" cy="175" r="4" fill="#2D8B7A" />
+          <!-- 4. Médico AP — ICS (2022-actual) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="map-ics" tabindex="0" role="button" aria-label="Médico Atención Primaria ICS">
+            <circle cx="840" cy="210" r="14" fill="#2D8B5E" fill-opacity="0.1"/>
+            <circle cx="840" cy="210" r="10" fill="white" stroke="#2D8B5E" stroke-width="3"/>
+            <circle cx="840" cy="210" r="4" fill="#2D8B5E"/>
           </g>
-          <text x="720" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">CAP Roses</text>
-          <text x="720" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#2D8B7A">2022–2023</text>
+          <text x="840" y="237" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">Médico AP — ICS</text>
+          <text x="840" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#2D8B5E">2022–actual</text>
 
-          <!-- CAP Mora la Nova — x=780 (2022-2023) -->
-          <g class="metro-station" data-filter="cap-mora" tabindex="0" role="button"
-            aria-label="CAP Mora la Nova 2022-2023">
-            <circle cx="780" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="780" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="780" cy="175" r="4" fill="#2D8B7A" />
+          <!-- ═══ METABOLISMO (y=330, #D4772C) — label below ═══ -->
+          <!-- YSONUT (2014-2016) — MEDIUM, expandable -->
+          <g class="traj-station traj-expandable" data-id="ysonut" tabindex="0" role="button" aria-label="YSONUT 2014-2016">
+            <circle cx="470" cy="330" r="14" fill="#D4772C" fill-opacity="0.1"/>
+            <circle cx="470" cy="330" r="10" fill="white" stroke="#D4772C" stroke-width="3"/>
+            <circle cx="470" cy="330" r="4" fill="#D4772C"/>
           </g>
-          <text x="780" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Mora Nova</text>
-          <text x="780" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#2D8B7A">10/22–06/23</text>
+          <text x="470" y="357" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#2A2420">YSONUT</text>
+          <text x="470" y="372" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#D4772C">2014–2016</text>
 
-          <!-- CAP Sitges — x=840 (2023-2024) -->
-          <g class="metro-station" data-filter="cap" tabindex="0" role="button" aria-label="CAP Sitges 2023-2024">
-            <circle cx="840" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="840" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="840" cy="175" r="4" fill="#2D8B7A" />
+          <!-- ═══ COMUNICACIÓN (y=430, #7B5EA7) — labels below ═══ -->
+          <!-- 1. Delegado estudiantil — SMALL -->
+          <g class="traj-station traj-expandable" data-id="delegado" tabindex="0" role="button" aria-label="Delegado estudiantil">
+            <circle cx="370" cy="430" r="14" fill="#7B5EA7" fill-opacity="0.1"/>
+            <circle cx="370" cy="430" r="10" fill="white" stroke="#7B5EA7" stroke-width="3"/>
+            <circle cx="370" cy="430" r="4" fill="#7B5EA7"/>
           </g>
-          <text x="840" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">CAP Sitges</text>
-          <text x="840" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#2D8B7A">2023–2024</text>
+          <text x="370" y="456" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#5C5550">Delegado</text>
 
-          <!-- 7.000+ Consultas — x=920 -->
-          <g class="metro-station" data-filter="consultas" tabindex="0" role="button" aria-label="7000 consultas">
-            <circle cx="920" cy="175" r="18" fill="#2D8B7A" fill-opacity="0.12" />
-            <circle cx="920" cy="175" r="10" fill="white" stroke="#2D8B7A" stroke-width="4" />
-            <circle cx="920" cy="175" r="4" fill="#2D8B7A" />
+          <!-- 2. Discursos de graduación — SMALL -->
+          <g class="traj-station traj-expandable" data-id="discursos" tabindex="0" role="button" aria-label="Discursos de graduación">
+            <circle cx="530" cy="430" r="14" fill="#7B5EA7" fill-opacity="0.1"/>
+            <circle cx="530" cy="430" r="10" fill="white" stroke="#7B5EA7" stroke-width="3"/>
+            <circle cx="530" cy="430" r="4" fill="#7B5EA7"/>
           </g>
-          <text x="920" y="152" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">7.000+</text>
-          <text x="920" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="#2D8B7A"
-            data-i18n-svg="legend.consultas">Consultas</text>
+          <text x="530" y="456" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#5C5550">Discursos</text>
 
-          <!-- === NUTRICIÓN (Blue, y=275) === -->
-          <g class="metro-station" data-filter="adema-nut" tabindex="0" role="button" aria-label="Nutrición base ADEMA">
-            <circle cx="70" cy="275" r="18" fill="#4A7BB7" fill-opacity="0.12" />
-            <circle cx="70" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
-            <circle cx="70" cy="275" r="4" fill="#4A7BB7" />
+          <!-- 3. Charlas educativas — SMALL -->
+          <g class="traj-station traj-expandable" data-id="charlas" tabindex="0" role="button" aria-label="Charlas educativas">
+            <circle cx="680" cy="430" r="14" fill="#7B5EA7" fill-opacity="0.1"/>
+            <circle cx="680" cy="430" r="10" fill="white" stroke="#7B5EA7" stroke-width="3"/>
+            <circle cx="680" cy="430" r="4" fill="#7B5EA7"/>
           </g>
-          <text x="70" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Nutr. base</text>
-          <text x="70" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#4A7BB7">ADEMA</text>
+          <text x="680" y="456" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="500" fill="#5C5550">Charlas</text>
 
-          <g class="metro-station" data-filter="ysonut" tabindex="0" role="button" aria-label="Ysonut 2015">
-            <circle cx="200" cy="275" r="18" fill="#4A7BB7" fill-opacity="0.12" />
-            <circle cx="200" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
-            <circle cx="200" cy="275" r="4" fill="#4A7BB7" />
+          <!-- ═══ END STATION (gold, largest) ═══ -->
+          <g class="traj-station traj-expandable" data-id="end" tabindex="0" role="button" aria-label="Medicina preventiva y longevidad">
+            <circle cx="1130" cy="260" r="72" fill="white" stroke="#B38645" stroke-width="3" filter="url(#traj-glow)"/>
+            <circle cx="1130" cy="260" r="65" fill="none" stroke="#B38645" stroke-width="1" stroke-dasharray="4 3" opacity="0.35"/>
           </g>
-          <text x="200" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Ysonut</text>
-          <text x="200" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#4A7BB7">2015–2017</text>
+          <text x="1130" y="246" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="#2A2420">Medicina</text>
+          <text x="1130" y="262" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="#2A2420">preventiva y</text>
+          <text x="1130" y="278" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="#2A2420">longevidad</text>
+          <text x="1130" y="300" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="#B38645" letter-spacing="0.04em">metabolismo · prevención</text>
 
-          <g class="metro-station" data-filter="bioimpedancia" tabindex="0" role="button"
-            aria-label="Bioimpedancia 2018">
-            <circle cx="650" cy="275" r="18" fill="#4A7BB7" fill-opacity="0.12" />
-            <circle cx="650" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
-            <circle cx="650" cy="275" r="4" fill="#4A7BB7" />
-          </g>
-          <text x="650" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.bioimpedancia">Bioimpedancia</text>
-          <text x="650" y="322" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="#4A7BB7"
-            data-i18n-svg="map.bioimpedancia_year">2018–hoy</text>
-          <!-- connector: Bioimpedancia(L3,650,275) → Biomarcadores(L4,720,375) -->
-          <line x1="660" y1="285" x2="715" y2="368" stroke="#4A7BB7" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.4" />
-
-          <g class="metro-station" data-filter="educacion-nut" tabindex="0" role="button"
-            aria-label="Educación nutricional 2023">
-            <circle cx="810" cy="275" r="18" fill="#4A7BB7" fill-opacity="0.12" />
-            <circle cx="810" cy="275" r="10" fill="white" stroke="#4A7BB7" stroke-width="4" />
-            <circle cx="810" cy="275" r="4" fill="#4A7BB7" />
-          </g>
-          <text x="810" y="304" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.educ_nut">Educ. nutricional</text>
-
-          <!-- === COMPETENCIAS (Orange, y=375) — stations spread across full timeline === -->
-
-          <!-- Gestión Ventas Ysonut — x=190 (2015, simultáneo con Ysonut nutrición) -->
-          <!-- connector: Ysonut (L3, x=200,y=275) → gestion-ventas (L4, x=190,y=375) -->
-          <line x1="200" y1="285" x2="192" y2="365" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.45" />
-          <g class="metro-station" data-filter="gestion-ventas" tabindex="0" role="button"
-            aria-label="Gestión Ventas Ysonut">
-            <circle cx="190" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="190" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="190" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="190" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.ventas">Ventas</text>
-          <text x="190" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#C07640">Ysonut</text>
-
-          <!-- Puntos de Venta Ysonut — x=270 (2016-17, gestión de red de clínicas) -->
-          <!-- connector: formacion-prof(L5,x=200,y=455) → puntos-venta(L4,x=270,y=375) -->
-          <line x1="220" y1="445" x2="265" y2="385" stroke="#C07640" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.4" />
-          <g class="metro-station" data-filter="puntos-venta" tabindex="0" role="button"
-            aria-label="Gestión Puntos de Venta">
-            <circle cx="270" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="270" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="270" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="270" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.puntos_venta">Puntos Venta</text>
-          <text x="270" y="334" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#C07640">2016–2018</text>
-
-          <!-- Cuidados Clínicos — x=365 (2017-19, habilidades Enf. Mallorca) -->
-          <!-- connector: enf-mallorca(L2,x=320,y=175) → cuidados-clinicos(L4,x=365,y=375) -->
-          <line x1="330" y1="185" x2="362" y2="365" stroke="#2D8B7A" stroke-width="1.5" stroke-dasharray="5 3"
-            opacity="0.4" />
-          <g class="metro-station" data-filter="cuidados-clinicos" tabindex="0" role="button"
-            aria-label="Habilidades Clínicas Joan XXIII">
-            <circle cx="365" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="365" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="365" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="365" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.habilid_clin">Habilid. Clínicas</text>
-          <text x="365" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#C07640">2017–2018</text>
-
-          <!-- Preventiva — x=460 (2018, Son Espases) -->
-          <g class="metro-station" data-filter="preventiva" tabindex="0" role="button"
-            aria-label="Medicina preventiva 2018">
-            <circle cx="460" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="460" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="460" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="460" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.preventiva">Preventiva</text>
-
-          <!-- Cirugía — x=530 (2017-19, HUSE + Quirón, from Enf. Mallorca) -->
-          <!-- connector: enf-mallorca(L2,x=320) → cirugia(L4,x=530) -->
-          <line x1="340" y1="185" x2="530" y2="365" stroke="#2D8B7A" stroke-width="1.2" stroke-dasharray="4 4"
-            opacity="0.35" />
-          <g class="metro-station" data-filter="cirugia" tabindex="0" role="button" aria-label="Asistencia Quirúrgica">
-            <circle cx="530" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="530" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="530" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="530" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.cirugia">Cirugía</text>
-          <text x="530" y="422" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#C07640">2018–2020</text>
-
-          <!-- Autonomía — x=620 (2019-20) -->
-          <g class="metro-station" data-filter="autonomia" tabindex="0" role="button"
-            aria-label="Autonomía médica 2019">
-            <circle cx="620" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="620" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="620" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="620" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.autonomia">Autonomía</text>
-
-          <!-- Biomarcadores — x=720 (2021-22) -->
-          <g class="metro-station" data-filter="biomarcadores" tabindex="0" role="button"
-            aria-label="Biomarcadores 2022">
-            <circle cx="720" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="720" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="720" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="720" y="404" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.biomarcadores">Biomarcadores</text>
-
-          <!-- Longevidad — x=820 (2023+) -->
-          <g class="metro-station" data-filter="longevidad" tabindex="0" role="button" aria-label="Longevidad 2023">
-            <circle cx="820" cy="375" r="18" fill="#C07640" fill-opacity="0.12" />
-            <circle cx="820" cy="375" r="10" fill="white" stroke="#C07640" stroke-width="4" />
-            <circle cx="820" cy="375" r="4" fill="#C07640" />
-          </g>
-          <text x="820" y="352" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.longevidad">Longevidad</text>
-
-
-          <!-- === DIVULGACIÓN (Purple, y=455) === -->
-          <g class="metro-station" data-filter="formacion-prof" tabindex="0" role="button"
-            aria-label="Formación profesionales Ysonut 2015">
-            <circle cx="200" cy="455" r="18" fill="#7B5EA7" fill-opacity="0.12" />
-            <circle cx="200" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
-            <circle cx="200" cy="455" r="4" fill="#7B5EA7" />
-          </g>
-          <text x="200" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.form_prof">Form. prof.</text>
-          <text x="200" y="502" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#7B5EA7">Ysonut</text>
-
-          <g class="metro-station" data-filter="workshops" tabindex="0" role="button" aria-label="Workshops 2016-2018">
-            <circle cx="320" cy="455" r="18" fill="#7B5EA7" fill-opacity="0.12" />
-            <circle cx="320" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
-            <circle cx="320" cy="455" r="4" fill="#7B5EA7" />
-          </g>
-          <text x="320" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030">Workshops</text>
-          <text x="320" y="502" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14"
-            fill="#7B5EA7">2016–2018</text>
-
-          <g class="metro-station" data-filter="educacion-pac" tabindex="0" role="button"
-            aria-label="Educación paciente 2022">
-            <circle cx="690" cy="455" r="18" fill="#7B5EA7" fill-opacity="0.12" />
-            <circle cx="690" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
-            <circle cx="690" cy="455" r="4" fill="#7B5EA7" />
-          </g>
-          <text x="650" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.educ_pac">Educ. paciente</text>
-
-          <g class="metro-station" data-filter="divulgacion-cient" tabindex="0" role="button"
-            aria-label="Divulgación científica 2023">
-            <circle cx="810" cy="455" r="18" fill="#7B5EA7" fill-opacity="0.12" />
-            <circle cx="810" cy="455" r="10" fill="white" stroke="#7B5EA7" stroke-width="4" />
-            <circle cx="810" cy="455" r="4" fill="#7B5EA7" />
-          </g>
-          <text x="850" y="484" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="600"
-            fill="#3a3030" data-i18n-svg="map.divulg_cient">Divulgación cient.</text>
-
-
-          <!-- === HUB central (al final = encima de líneas) === -->
-          <circle cx="1050" cy="275" r="68" fill="white" stroke="#B38645" stroke-width="3" />
-          <circle cx="1050" cy="275" r="60" fill="none" stroke="#B38645" stroke-width="1" stroke-dasharray="4 3"
-            opacity="0.35" />
-          <text x="1050" y="267" text-anchor="middle" font-family="Playfair Display,serif" font-size="18"
-            font-weight="600" fill="#2A2420">Dr. Jasson</text>
-          <text x="1050" y="291" text-anchor="middle" font-family="Playfair Display,serif" font-size="18"
-            font-weight="600" fill="#2A2420">Cervera</text>
-
-          <!-- Removed Eje cronológico al pie -->
-
+          <!-- Narrative flow -->
+          <text x="630" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="600" fill="#8A8580" letter-spacing="0.16em" data-i18n-svg="traj.narrative">PERSONAS  →  NUTRICIÓN  →  CLÍNICA  →  MEDICINA  →  LONGEVIDAD</text>
         </svg>
-      </div><!-- /.metro-map-wrapper -->
+      </div>
 
-      <!-- ===== MOBILE ACCORDION — hidden on desktop, shown on mobile ===== -->
-      <!-- Content is generated dynamically by initMetroMobile() in main.js -->
+      <!-- Mobile accordion -->
       <div id="metro-mobile" aria-label="Mapa de carrera — vista móvil"></div>
 
-      <!-- Floating Station Card — positioned via JS next to clicked station -->
+      <!-- Floating Station Panel -->
       <div class="metro-tooltip" id="metro-panel" role="dialog" aria-hidden="true" aria-modal="true">
         <button type="button" class="metro-tooltip-close" aria-label="Cerrar">×</button>
         <div class="metro-panel-body"></div>
       </div>
 
-
-    </div>
+    </div><!-- /.section-container -->
   </section>
-
 
   <!-- ====== PREGUNTAS FRECUENTES ====== -->
   <section id="faq" class="section-luxury faq-section">
