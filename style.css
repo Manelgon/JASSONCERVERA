@@ -441,18 +441,18 @@ body.panel-open {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: transparent;
-  color: var(--gold);
+  background: var(--gold);
+  color: #fff;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   border: 1.5px solid var(--gold);
-  transition: background 0.25s, color 0.25s;
+  transition: background 0.25s, border-color 0.25s;
 }
 
 .btn-whatsapp:hover {
-  background: var(--gold);
-  color: var(--gold-deep);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
 }
 
 .btn-whatsapp svg {
