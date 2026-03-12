@@ -436,6 +436,29 @@ body.panel-open {
   color: var(--gold-deep);
 }
 
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #25D366;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid #25D366;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+  border-color: #1ebe57;
+}
+
+.btn-whatsapp svg {
+  flex-shrink: 0;
+}
+
 /* ---- SECTIONS ---- */
 .section-luxury {
   padding: var(--section-padding);
