@@ -93,7 +93,7 @@ export const EN = {
 
     // Contact
     'contact.accent': 'Contact',
-    'contact.title': 'Shall we talk about prevention and<br> health optimization?',
+    'contact.title': 'Shall we discuss my application<br> for Age Reversal?',
 
     // Footer
     'footer.desc': 'Integrative medicine focused on prevention and longevity optimization.',
@@ -180,7 +180,7 @@ export const ES = {
     'faq.q5': '¿Cuál es tu visión sobre el futuro de la medicina?',
     'faq.a5': 'El futuro no está en tratar enfermedades cuando aparecen, sino en anticiparse a ellas. Creo en una medicina preventiva, personalizada y basada en datos que extienda los años de salud total —lo que llamamos healthspan optimization. Es exactamente el cambio de paradigma que impulsa Age Reversal: alinear ciencia de vanguardia, epigenética y monitorización continua con la realidad biológica de cada individuo.',
     'contact.accent': 'Contacto',
-    'contact.title': '¿Hablamos sobre prevención y<br> optimización de la salud?',
+    'contact.title': '¿Hablamos sobre mi candidatura<br> para Age Reversal?',
     'footer.desc': 'Medicina integradora enfocada en la prevención y la optimización de la longevidad.',
     'footer.contact_title': 'Contacto',
     'footer.nav_title': 'Navegación',

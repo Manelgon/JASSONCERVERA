@@ -451,8 +451,8 @@ body.panel-open {
 }
 
 .btn-whatsapp:hover {
-  background: var(--gold-deep);
-  border-color: var(--gold-deep);
+  background: transparent;
+  color: var(--gold);
 }
 
 .btn-whatsapp svg {
