@@ -110,7 +110,7 @@ export const EN = {
     'footer.contact_title': 'Contact',
     'footer.nav_title': 'Navigation',
     'footer.copy': '© 2026 Dr. Jasson Cervera Alzate. All rights reserved.',
-    'footer.availability': 'Available to work in Mallorca. Currently between Barcelona and Palma.',
+    'footer.availability': 'Available to work in <span style="color:var(--gold)">Mallorca</span> and <span style="color:var(--gold)">Barcelona</span>',
 };
 
 /* ==============================
@@ -206,7 +206,7 @@ export const ES = {
     'footer.contact_title': 'Contacto',
     'footer.nav_title': 'Navegación',
     'footer.copy': '© 2026 Dr. Jasson Cervera Alzate. Todos los derechos reservados.',
-    'footer.availability': 'Disponible para trabajar en Mallorca. Actualmente entre Barcelona y Palma.',
+    'footer.availability': 'Disponible para trabajar en <span style="color:var(--gold)">Mallorca</span> y <span style="color:var(--gold)">Barcelona</span>',
 };
 
 /* ==============================
