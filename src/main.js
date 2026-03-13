@@ -93,82 +93,66 @@ const METRO_CONTENT = {
   /* ── ESTACIÓN INICIO ─────────────────────────────── */
   start: {
     line: 'inicio', year: 'Inicio',
-    title: 'Inicio — trabajo con personas',
-    institution: 'Negocio familiar y atención al público',
+    title: 'Inicio — trabajo con personas (14 años)',
+    institution: 'Negocio familiar',
     items: [
-      'Participación temprana en negocio familiar',
-      'Atención directa al público',
-      'Primeras responsabilidades de gestión',
+      'Primer contacto con atención al público en negocio familiar desde los 14 años.',
+      'Gestión de clientes, resolución de conflictos y responsabilidad temprana en entornos de atención directa.',
     ],
   },
 
   /* ── LÍNEA 1: FORMACIÓN ──────────────────────────── */
   dietetica: {
-    line: 'formacion', year: '2013',
-    title: 'Técnico Superior en Dietética',
+    line: 'formacion', year: '2013–2015',
+    title: 'Dietética — ADEMA',
     institution: 'A.D.E.M.A.',
     items: [
-      'Primera vocación clínica y excelencia académica',
-      'Fundamentos de nutrición, metabolismo y fisiología',
-      'Primer contacto con el abordaje nutricional de pacientes',
-      'Base de la posterior trayectoria integradora',
+      'Formación en nutrición clínica y metabolismo humano.',
+      'Primer acercamiento al estudio de la fisiología metabólica y su impacto en la salud.',
     ],
   },
   enfermeria: {
     line: 'formacion', year: '2017',
-    title: 'Grado en Enfermería',
+    title: 'Enfermería — UIB',
     institution: 'Universitat de les Illes Balears (UIB)',
     items: [
-      'Comprensión profunda del cuerpo humano desde la práctica',
-      'Hospitalización: cirugía, oncología, psiquiatría',
-      'Habilidades clínicas y de comunicación médica',
-      'Cuidado integral del paciente',
+      'Formación sanitaria orientada al cuidado clínico integral del paciente y al trabajo en entornos hospitalarios complejos.',
     ],
   },
   medicina: {
     line: 'formacion', year: '2022',
-    title: 'Grado en Medicina',
+    title: 'Medicina — URV',
     institution: 'Universitat Rovira i Virgili (URV)',
     items: [
-      'Formación completa durante la pandemia COVID-19',
-      'Vacunación masiva y gestión en crisis sanitaria',
-      'Integración de enfermería y nutrición en el criterio médico',
-      'Especialización hacia medicina preventiva y longevidad',
+      'Formación médica con experiencia clínica durante la pandemia y rotaciones hospitalarias en diferentes niveles asistenciales.',
     ],
   },
   master: {
     line: 'formacion', year: '2023',
-    title: 'Máster Medicina Estética, Nutrición y Antienvejecimiento',
+    title: 'Máster Medicina Estética — AMIR',
     institution: 'AMIR',
     items: [
-      'Vanguardia en medicina antienvejecimiento',
-      'Optimización metabólica y medicina personalizada',
-      'Biomarcadores, epigenética y edad biológica',
-      'Convergencia de toda la trayectoria hacia la longevidad',
+      'Especialización en medicina estética y regenerativa, integrando conocimiento clínico con estrategias de optimización biológica.',
     ],
   },
 
   /* ── LÍNEA 2: CLÍNICA ────────────────────────────── */
   'enf-hosp': {
     line: 'clinica', year: '2017–2019',
-    title: 'Enfermería Hospitalaria',
-    institution: 'HUSE · H. Juaneda Miramar · Quirón Salud',
+    title: 'Enfermería hospitalaria',
+    institution: 'Son Espases · Joan XXIII',
     items: [
-      'Digestivo / Endoscopia (HUSE)',
-      'Psiquiatría · Oncología · Medicina Interna (Juaneda Miramar)',
-      'Cardiología · Medicina Interna (Quirón)',
-      'Hospitalización en múltiples unidades especializadas',
+      'Experiencia en hospitalización y entorno quirúrgico.',
+      'Trabajo clínico en hospitales como Son Espases y Joan XXIII.',
     ],
   },
   covid: {
     line: 'clinica', year: '2020',
     title: 'Pandemia COVID',
-    institution: 'H.U. Son Espases · H.U. Sant Joan de Reus',
+    institution: 'Entornos hospitalarios de alta presión asistencial',
     items: [
-      'Hospitalización COVID-19 (Sant Joan de Reus)',
-      'Cirugía Maxilofacial (Son Espases)',
-      'Cirugía Vascular y Angiología (Son Espases)',
-      'Gestión clínica en primera línea de pandemia',
+      'Experiencia clínica durante la crisis sanitaria en entornos hospitalarios de alta presión asistencial.',
+      'Participación en iniciativas de apoyo comunitario durante el confinamiento.',
     ],
   },
   'joan-xxiii': {
@@ -176,36 +160,52 @@ const METRO_CONTENT = {
     title: 'Hospital Joan XXIII',
     institution: 'Hospital Universitari Joan XXIII, Tarragona',
     items: [
-      'Hospitalización URO · ORL · Patología cerebrovascular',
-      'Campaña de vacunación masiva COVID-19',
-      'Cuidados en entorno de hospital de tercer nivel',
-      'Consolidación de criterio clínico enfermero',
+      'Experiencia clínica en hospital de tercer nivel con contacto con patología compleja y trabajo multidisciplinar.',
     ],
   },
   'map-ics': {
-    line: 'clinica', year: '2022–actual',
+    line: 'clinica', year: '2022–actualidad',
     title: 'Médico Atención Primaria — ICS',
-    institution: 'CAP Ametlla de Mar · Mora la Nova · Roses · Sitges',
+    institution: 'ICS',
     items: [
-      'CAP Ametlla de Mar (urgencias)',
-      'CAP Mora la Nova / Mora d\'Ebre',
-      'CAP Roses / Cadaqués',
-      'CAP Sitges · más de 7.000 consultas acumuladas',
+      'Atención a miles de pacientes en consulta de atención primaria.',
+      'Desarrollo de autonomía clínica y toma de decisiones médicas en primera línea asistencial.',
     ],
   },
 
   /* ── LÍNEA 3: METABOLISMO ────────────────────────── */
   ysonut: {
     line: 'metabolismo', year: '2014–2016',
-    title: 'YSONUT — Nutrición y Suplementación',
-    institution: 'Laboratorios Ysonut',
+    title: 'YSONUT',
+    institution: 'Punto de venta especializado en nutrición clínica y suplementación',
     items: [
-      'Responsable de punto nutricional',
-      'Asesoramiento nutricional y suplementación metabólica',
-      'Educación nutricional y gestión operativa del centro',
-      'Pedidos, trazabilidad, facturación y coordinación de equipo',
-      'Propuesta e implementación de buzón de sugerencias',
-      'Feedback operativo al equipo nacional',
+      'Gestión de pedidos y trazabilidad',
+      'Facturación y administración del punto de venta',
+      'Gestión de equipo (hasta 2 personas)',
+      'Realización de entrevistas y gestión de personal',
+      'Optimización de ventas y atención al cliente',
+      'Logro destacado: duplicación del volumen de ventas respecto a otros centros en menor tiempo, con reconocimiento del CEO Pablo Rodríguez.',
+    ],
+  },
+  optimizacion: {
+    line: 'metabolismo', year: 'Continuo',
+    title: 'Optimización metabólica',
+    institution: 'Aplicación práctica del conocimiento nutricional',
+    items: [
+      'Educación nutricional',
+      'Adherencia del paciente',
+      'Interpretación de bioimpedancia',
+      'Estrategias metabólicas personalizadas',
+    ],
+  },
+  biomarcadores: {
+    line: 'metabolismo', year: 'Continuo',
+    title: 'Biomarcadores',
+    institution: 'Interpretación clínica de analíticas y marcadores metabólicos',
+    items: [
+      'Datos analíticos',
+      'Estilo de vida',
+      'Prevención personalizada',
     ],
   },
 
@@ -213,11 +213,9 @@ const METRO_CONTENT = {
   delegado: {
     line: 'comunicacion', year: 'Varias etapas',
     title: 'Delegado estudiantil',
-    institution: 'Bachillerato · Dietética · Enfermería',
+    institution: 'Etapas formativas',
     items: [
-      'Representante de estudiantes en tres etapas formativas',
-      'Gestión de propuestas y coordinación con el claustro',
-      'Desarrollo de habilidades de liderazgo y comunicación',
+      'Representación estudiantil durante etapas formativas y participación en dinámicas organizativas dentro del entorno académico.',
     ],
   },
   discursos: {
@@ -225,19 +223,16 @@ const METRO_CONTENT = {
     title: 'Discursos de graduación',
     institution: 'UIB (Enfermería) · URV (Medicina)',
     items: [
-      'Elegido por sus compañeros para representar la promoción',
-      'Discurso de graduación de Enfermería (UIB, 2017)',
-      'Discurso de graduación de Medicina (URV, 2022)',
+      'Elección por parte de los compañeros para realizar los discursos de graduación en distintas promociones.',
+      'Los discursos están disponibles en vídeo.',
     ],
   },
   charlas: {
     line: 'comunicacion', year: 'Continuo',
-    title: 'Charlas educativas',
-    institution: 'Divulgación en nutrición y hábitos saludables',
+    title: 'Charlas y divulgación',
+    institution: 'Educación nutricional y comunicación sobre hábitos de salud',
     items: [
-      'Sesiones formativas en nutrición clínica y composición corporal',
-      'Educación en adherencia a hábitos saludables',
-      'Comunicación científica adaptada al público general',
+      'Participación en actividades de educación nutricional y comunicación sobre hábitos de salud.',
     ],
   },
 
