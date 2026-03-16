@@ -47,7 +47,7 @@ export const EN = {
 
     // Enfoque
     'enfoque.accent': 'My approach',
-    'enfoque.title': 'My way of practicing medicine',
+    'enfoque.title': 'The way I practice medicine',
     'enfoque.card1_title': 'Understanding the patient before the disease',
     'enfoque.card1_desc': 'The medicine I want to practice starts by understanding the person\'s full context: their metabolism, lifestyle, medical history and habits.',
     'enfoque.card1_desc2': 'Health problems often do not appear in isolation, but as the result of biological processes that have been developing for years. Understanding that context allows for more precise, tailored medical decisions.',
@@ -61,7 +61,7 @@ export const EN = {
 
     // Trayectoria
     'tray.accent': 'Career path',
-    'tray.title': 'Professional experience map',
+    'tray.title': 'Professional experience and future vision',
     'tray.sub': 'Visual representation of the professional evolution towards preventive medicine and longevity.',
     'tray.hint': 'Click on the highlighted stations to explore each stage.',
 
@@ -83,7 +83,7 @@ export const EN = {
 
     // FAQ
     'faq.accent': 'Frequently asked questions',
-    'faq.title': 'Questions about my application',
+    'faq.title': 'About my application for Age Reversal',
     'faq.q1': 'What attracts you to the Age Reversal medical model?',
     'faq.a1': 'I am a physician, nurse and dietitian. That triple background was not a professional strategy, but a natural way of approaching the patient from different angles.',
     'faq.a1b': 'Over time I have come to understand that many diseases share the same biological terrain: metabolism, inflammation, habits and lifestyle.',
@@ -159,7 +159,7 @@ export const ES = {
     'about.speech_link': 'ver vídeo',
     'about.speech_link2': 'ver vídeo',
     'enfoque.accent': 'Mi enfoque',
-    'enfoque.title': 'Mi forma de ejercer la medicina',
+    'enfoque.title': 'La forma en la que ejerzo la medicina',
     'enfoque.card1_title': 'Comprender al paciente antes que la enfermedad',
     'enfoque.card1_desc': 'La medicina que me interesa practicar empieza por entender el contexto completo de la persona: su metabolismo, su estilo de vida, su historia clínica y sus hábitos.',
     'enfoque.card1_desc2': 'Muchas veces los problemas de salud no aparecen de forma aislada, sino como resultado de procesos biológicos que llevan años desarrollándose. Comprender ese contexto permite tomar decisiones médicas más precisas y ajustadas a cada paciente.',
@@ -171,7 +171,7 @@ export const ES = {
     'enfoque.card3_desc2': 'Por eso me interesa una medicina que combine el conocimiento clínico con estrategias prácticas que ayuden a las personas a mejorar su nutrición, su descanso, su actividad física y su equilibrio metabólico.',
     'enfoque.card3_desc3': 'Pequeños cambios mantenidos pueden tener un impacto muy significativo en la salud a largo plazo.',
     'tray.accent': 'Trayectoria',
-    'tray.title': 'Mapa de experiencia profesional',
+    'tray.title': 'Experiencia profesional y visión de futuro',
     'tray.sub': 'Representación visual de la evolución profesional hacia medicina preventiva y longevidad.',
     'tray.hint': 'Haz clic en las estaciones marcadas para explorar cada etapa.',
     'legend.formacion': 'Formación',
@@ -187,7 +187,7 @@ export const ES = {
     'traj.start.sub2': 'personas (14 años)',
     'traj.narrative': 'PERSONAS  →  NUTRICIÓN  →  CLÍNICA  →  MEDICINA  →  LONGEVIDAD',
     'faq.accent': 'Preguntas frecuentes',
-    'faq.title': 'Preguntas sobre mi candidatura',
+    'faq.title': 'Sobre mi candidatura para Age Reversal',
     'faq.q1': '¿Qué te atrae del modelo médico de Age Reversal?',
     'faq.a1': 'Soy médico, enfermero y dietista. Esa triple formación no fue una estrategia profesional, sino una manera natural de acercarme al paciente desde distintos ángulos.',
     'faq.a1b': 'Con el tiempo he ido entendiendo que muchas enfermedades comparten un mismo terreno biológico: metabolismo, inflamación, hábitos y estilo de vida.',

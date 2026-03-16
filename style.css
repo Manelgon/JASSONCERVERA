@@ -568,12 +568,17 @@ body.panel-open {
   justify-content: center;
 }
 
-.about-doctor-img {
+.about-doctor-img,
+.about-doctor-video {
   width: 100%;
   max-width: 420px;
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+.about-doctor-video {
+  border-radius: 8px;
 }
 
 .about-content p {
